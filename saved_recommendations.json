@@ -1,0 +1,2834 @@
+[
+  {
+    "id": "ca07e72e-8329-428f-94e3-09417550b8bd",
+    "project_name": "My Project",
+    "created_at": "2026-04-26T22:05:19.808815Z",
+    "input": {
+      "text": "school building",
+      "area": "",
+      "city": "karachi",
+      "quality": "Standard"
+    },
+    "recommendations": {
+      "Raw Materials": [
+        {
+          "item_name": "Fly Ash Block",
+          "brand": "AAC Block Pakistan",
+          "quality_grade": "Standard",
+          "unit": "piece",
+          "market_price_pkr": 90,
+          "final_price_pkr": 90,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Hamza Suppliers",
+          "recommendation_score": 56.8,
+          "score_breakdown": {
+            "cosine": 0.4131,
+            "rec_score_norm": 0.996,
+            "quality_match": 1,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Concrete Block (Solid)",
+          "brand": "Block Factory Lahore",
+          "quality_grade": "8-inch",
+          "unit": "piece",
+          "market_price_pkr": 120,
+          "final_price_pkr": 120,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 55.1,
+          "score_breakdown": {
+            "cosine": 0.4789,
+            "rec_score_norm": 0.951,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Ravi Sand (Fine)",
+          "brand": "Lahore Sand Supply",
+          "quality_grade": "Medium",
+          "unit": "100 cft (one trolley)",
+          "market_price_pkr": 13850,
+          "final_price_pkr": 13160,
+          "discount_pct": 5,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 54.9,
+          "score_breakdown": {
+            "cosine": 0.4032,
+            "rec_score_norm": 0.934,
+            "quality_match": 0.5,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Concrete Block (Hollow)",
+          "brand": "Islamabad Block Works",
+          "quality_grade": "8-inch",
+          "unit": "piece",
+          "market_price_pkr": 90,
+          "final_price_pkr": 80,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 53.9,
+          "score_breakdown": {
+            "cosine": 0.4652,
+            "rec_score_norm": 0.934,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Brick Awwal (1st Grade)",
+          "brand": "Lahore Brick Works",
+          "quality_grade": "Awwal (1st)",
+          "unit": "1000 bricks",
+          "market_price_pkr": 22140,
+          "final_price_pkr": 21480,
+          "discount_pct": 3,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 52.4,
+          "score_breakdown": {
+            "cosine": 0.4983,
+            "rec_score_norm": 1,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Limestone Stone",
+          "brand": "Islamabad Stone",
+          "quality_grade": "Grade-B",
+          "unit": "per cft",
+          "market_price_pkr": 200,
+          "final_price_pkr": 190,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 49.8,
+          "score_breakdown": {
+            "cosine": 0.3958,
+            "rec_score_norm": 0.955,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Brick B-Grade (2nd Grade)",
+          "brand": "Ravi Kiln",
+          "quality_grade": "B-Grade (2nd)",
+          "unit": "1000 bricks",
+          "market_price_pkr": 17880,
+          "final_price_pkr": 17520,
+          "discount_pct": 2,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 48,
+          "score_breakdown": {
+            "cosine": 0.3962,
+            "rec_score_norm": 0.861,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "RCC & Structural": [
+        {
+          "item_name": "Centering Props (Adjustable Steel)",
+          "brand": "Pakistani Formwork Co.",
+          "quality_grade": "3.5m",
+          "unit": "per piece (rental/month)",
+          "market_price_pkr": 300,
+          "final_price_pkr": 300,
+          "discount_pct": 0,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 47.8,
+          "score_breakdown": {
+            "cosine": 0.4365,
+            "rec_score_norm": 0.97,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "Masonry & Wall Work": [
+        {
+          "item_name": "Plaster Sand (Fine)",
+          "brand": "Ravi Sand",
+          "quality_grade": "Medium",
+          "unit": "100 cft",
+          "market_price_pkr": 14820,
+          "final_price_pkr": 14520,
+          "discount_pct": 2,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "City Construction Market",
+          "recommendation_score": 49.9,
+          "score_breakdown": {
+            "cosine": 0.3985,
+            "rec_score_norm": 0.952,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        }
+      ],
+      "Roofing Materials": [
+        {
+          "item_name": "GI Roofing Sheet (Corrugated)",
+          "brand": "Gul Ahmed Steel",
+          "quality_grade": "0.55mm",
+          "unit": "per sft",
+          "market_price_pkr": 170,
+          "final_price_pkr": 170,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 47,
+          "score_breakdown": {
+            "cosine": 0.3587,
+            "rec_score_norm": 0.935,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Color Coated Sheet (PPGI)",
+          "brand": "Gul Ahmed Steel",
+          "quality_grade": "0.55mm",
+          "unit": "per sft",
+          "market_price_pkr": 290,
+          "final_price_pkr": 250,
+          "discount_pct": 15,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 45.8,
+          "score_breakdown": {
+            "cosine": 0.3423,
+            "rec_score_norm": 0.926,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Doors & Windows": [
+        {
+          "item_name": "Glass (Clear Float) 5mm",
+          "brand": "Pakistan Float Glass",
+          "quality_grade": "4mm",
+          "unit": "per sft",
+          "market_price_pkr": 190,
+          "final_price_pkr": 190,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Karachi Steel Mart",
+          "recommendation_score": 51.5,
+          "score_breakdown": {
+            "cosine": 0.4249,
+            "rec_score_norm": 0.943,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Glass (Tempered) 8mm",
+          "brand": "Pakistan Float Glass",
+          "quality_grade": "10mm",
+          "unit": "per sft",
+          "market_price_pkr": 520,
+          "final_price_pkr": 440,
+          "discount_pct": 15,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Local Hardware Store",
+          "recommendation_score": 45.6,
+          "score_breakdown": {
+            "cosine": 0.4158,
+            "rec_score_norm": 0.931,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Glass (Frosted/Obscure) 5mm",
+          "brand": "Pakistan Float Glass",
+          "quality_grade": "Patterned",
+          "unit": "per sft",
+          "market_price_pkr": 220,
+          "final_price_pkr": 220,
+          "discount_pct": 0,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Hamza Suppliers",
+          "recommendation_score": 44.2,
+          "score_breakdown": {
+            "cosine": 0.3992,
+            "rec_score_norm": 0.913,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Door Frame (Deodar Wood)",
+          "brand": "Rauf Furniture",
+          "quality_grade": "Sheesham",
+          "unit": "per frame (set)",
+          "market_price_pkr": 6340,
+          "final_price_pkr": 6150,
+          "discount_pct": 3,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 41.1,
+          "score_breakdown": {
+            "cosine": 0.4097,
+            "rec_score_norm": 0.723,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "Wood & Carpentry": [
+        {
+          "item_name": "Deodar Timber",
+          "brand": "Peshawar Timber",
+          "quality_grade": "B-Grade",
+          "unit": "per cft",
+          "market_price_pkr": 3350,
+          "final_price_pkr": 3250,
+          "discount_pct": 3,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Pak Construction Center",
+          "recommendation_score": 48.8,
+          "score_breakdown": {
+            "cosine": 0.4052,
+            "rec_score_norm": 0.871,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Sheesham Timber (Indian Rosewood)",
+          "brand": "Timber Market Lahore",
+          "quality_grade": "A-Grade",
+          "unit": "per cft",
+          "market_price_pkr": 7250,
+          "final_price_pkr": 6890,
+          "discount_pct": 5,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Pak Construction Center",
+          "recommendation_score": 48.6,
+          "score_breakdown": {
+            "cosine": 0.4026,
+            "rec_score_norm": 0.872,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        }
+      ],
+      "Paint & Finishing": [
+        {
+          "item_name": "Primer (Interior Wall Primer)",
+          "brand": "ICI",
+          "quality_grade": "Standard",
+          "unit": "per 20 liter",
+          "market_price_pkr": 5660,
+          "final_price_pkr": 5260,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Karachi Steel Mart",
+          "recommendation_score": 51.7,
+          "score_breakdown": {
+            "cosine": 0.2673,
+            "rec_score_norm": 0.966,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Emulsion Paint (Exterior - Weathershield)",
+          "brand": "ICI Dulux Weathershield",
+          "quality_grade": "Standard",
+          "unit": "per 20 liter",
+          "market_price_pkr": 13810,
+          "final_price_pkr": 12430,
+          "discount_pct": 10,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 47.4,
+          "score_breakdown": {
+            "cosine": 0.1915,
+            "rec_score_norm": 0.997,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Wallpaper (Vinyl)",
+          "brand": "Graham & Brown",
+          "quality_grade": "Fabric",
+          "unit": "per roll (10m x 0.53m)",
+          "market_price_pkr": 6420,
+          "final_price_pkr": 6100,
+          "discount_pct": 5,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sindh Construction Hub",
+          "recommendation_score": 47.4,
+          "score_breakdown": {
+            "cosine": 0.361,
+            "rec_score_norm": 0.945,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Emulsion Paint (Interior)",
+          "brand": "Berger",
+          "quality_grade": "Standard",
+          "unit": "per 20 liter",
+          "market_price_pkr": 10050,
+          "final_price_pkr": 9850,
+          "discount_pct": 2,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sindh Construction Hub",
+          "recommendation_score": 45.3,
+          "score_breakdown": {
+            "cosine": 0.1796,
+            "rec_score_norm": 0.929,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        }
+      ],
+      "Flooring Materials": [
+        {
+          "item_name": "Marble (Local - Sunny Beige)",
+          "brand": "Lahore Marble Market",
+          "quality_grade": "Sunny Beige",
+          "unit": "per sft",
+          "market_price_pkr": 210,
+          "final_price_pkr": 210,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 52.3,
+          "score_breakdown": {
+            "cosine": 0.4286,
+            "rec_score_norm": 0.971,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Granite (Local - Balochistan Black)",
+          "brand": "Karachi Stone",
+          "quality_grade": "A-Grade",
+          "unit": "per sft",
+          "market_price_pkr": 250,
+          "final_price_pkr": 210,
+          "discount_pct": 15,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Local Hardware Store",
+          "recommendation_score": 50.9,
+          "score_breakdown": {
+            "cosine": 0.3985,
+            "rec_score_norm": 1,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Marble (Imported - Turkish Burdur)",
+          "brand": "Marble Import Co.",
+          "quality_grade": "A-Grade",
+          "unit": "per sft",
+          "market_price_pkr": 720,
+          "final_price_pkr": 670,
+          "discount_pct": 7,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Pak Construction Center",
+          "recommendation_score": 50.2,
+          "score_breakdown": {
+            "cosine": 0.4019,
+            "rec_score_norm": 0.952,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        }
+      ],
+      "Kitchen Materials": [
+        {
+          "item_name": "Quartz Countertop (Engineered)",
+          "brand": "Silestone Import",
+          "quality_grade": "Standard",
+          "unit": "per running foot",
+          "market_price_pkr": 5260,
+          "final_price_pkr": 4890,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 47.8,
+          "score_breakdown": {
+            "cosine": 0.1999,
+            "rec_score_norm": 0.988,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Kitchen Chimney / Hood",
+          "brand": "Fotile",
+          "quality_grade": "Wall Mount 60cm",
+          "unit": "per piece",
+          "market_price_pkr": 29100,
+          "final_price_pkr": 29100,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 42.8,
+          "score_breakdown": {
+            "cosine": 0.2767,
+            "rec_score_norm": 0.991,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Kitchen Sink (Granite Composite)",
+          "brand": "Local Import",
+          "quality_grade": "White",
+          "unit": "per piece",
+          "market_price_pkr": 21980,
+          "final_price_pkr": 20880,
+          "discount_pct": 5,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Karachi Steel Mart",
+          "recommendation_score": 42.7,
+          "score_breakdown": {
+            "cosine": 0.2738,
+            "rec_score_norm": 0.994,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Plumbing - Pipes & Fittings": [
+        {
+          "item_name": "GI Pipe 3/4 inch",
+          "brand": "Pakistan Steel GI",
+          "quality_grade": "Medium",
+          "unit": "per 20ft length",
+          "market_price_pkr": 2560,
+          "final_price_pkr": 2180,
+          "discount_pct": 15,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 49,
+          "score_breakdown": {
+            "cosine": 0.2987,
+            "rec_score_norm": 0.979,
+            "quality_match": 0.5,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "GI Pipe 1 inch",
+          "brand": "Pakistan Steel GI",
+          "quality_grade": "Medium",
+          "unit": "per 20ft length",
+          "market_price_pkr": 2910,
+          "final_price_pkr": 2910,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 46.9,
+          "score_breakdown": {
+            "cosine": 0.3099,
+            "rec_score_norm": 0.84,
+            "quality_match": 0.5,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "GI Tee (1/2 inch)",
+          "brand": "Pakistan Steel",
+          "quality_grade": "1/2\"",
+          "unit": "per piece",
+          "market_price_pkr": 130,
+          "final_price_pkr": 130,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 46.5,
+          "score_breakdown": {
+            "cosine": 0.3377,
+            "rec_score_norm": 0.976,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Plumbing - Taps & Fixtures": [
+        {
+          "item_name": "Wash Basin (Pedestal)",
+          "brand": "Roca",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 13490,
+          "final_price_pkr": 12550,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 45.1,
+          "score_breakdown": {
+            "cosine": 0.1703,
+            "rec_score_norm": 0.952,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Wash Basin (Wall Hung - Ceramic)",
+          "brand": "Roca",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 6450,
+          "final_price_pkr": 6320,
+          "discount_pct": 2,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Karachi Steel Mart",
+          "recommendation_score": 44.9,
+          "score_breakdown": {
+            "cosine": 0.1967,
+            "rec_score_norm": 0.857,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Bath Mixer (Wall Mounted)",
+          "brand": "Toto",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 29750,
+          "final_price_pkr": 26780,
+          "discount_pct": 10,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 44.9,
+          "score_breakdown": {
+            "cosine": 0.1937,
+            "rec_score_norm": 0.865,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Hand Shower Set",
+          "brand": "Hansgrohe",
+          "quality_grade": "Standard",
+          "unit": "per set",
+          "market_price_pkr": 9340,
+          "final_price_pkr": 9150,
+          "discount_pct": 2,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 44.3,
+          "score_breakdown": {
+            "cosine": 0.158,
+            "rec_score_norm": 0.953,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Pillar Tap (Quarter-turn) - Chrome",
+          "brand": "Porta",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 1640,
+          "final_price_pkr": 1640,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Sindh Construction Hub",
+          "recommendation_score": 43.5,
+          "score_breakdown": {
+            "cosine": 0.1612,
+            "rec_score_norm": 0.899,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Pillar Tap (Bib Cock) - Chrome",
+          "brand": "Sanipex",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 3270,
+          "final_price_pkr": 3110,
+          "discount_pct": 5,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Sindh Construction Hub",
+          "recommendation_score": 43.4,
+          "score_breakdown": {
+            "cosine": 0.1415,
+            "rec_score_norm": 0.962,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Mixer Tap (Basin Mixer - Single Lever)",
+          "brand": "Al-Jadeed",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 12110,
+          "final_price_pkr": 10900,
+          "discount_pct": 10,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 43.3,
+          "score_breakdown": {
+            "cosine": 0.1537,
+            "rec_score_norm": 0.916,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        }
+      ],
+      "Plumbing - Valves & Control": [
+        {
+          "item_name": "Ball Valve (1/2 inch - Brass Full Bore)",
+          "brand": "Kitz",
+          "quality_grade": "1/2\"",
+          "unit": "per piece",
+          "market_price_pkr": 810,
+          "final_price_pkr": 810,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 35.6,
+          "score_breakdown": {
+            "cosine": 0.1989,
+            "rec_score_norm": 0.882,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "PPRC Ball Valve (20mm)",
+          "brand": "Interplast",
+          "quality_grade": "20mm",
+          "unit": "per piece",
+          "market_price_pkr": 580,
+          "final_price_pkr": 520,
+          "discount_pct": 10,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 35.6,
+          "score_breakdown": {
+            "cosine": 0.1671,
+            "rec_score_norm": 0.985,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Pressure Reducing Valve (PRV)",
+          "brand": "Watts",
+          "quality_grade": "1\"",
+          "unit": "per piece",
+          "market_price_pkr": 11010,
+          "final_price_pkr": 9360,
+          "discount_pct": 15,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Karachi Steel Mart",
+          "recommendation_score": 34.4,
+          "score_breakdown": {
+            "cosine": 0.1873,
+            "rec_score_norm": 0.86,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Float Valve (Tank Inlet) - Brass",
+          "brand": "Al-Jadeed",
+          "quality_grade": "1/2\" Side Entry",
+          "unit": "per piece",
+          "market_price_pkr": 1160,
+          "final_price_pkr": 1130,
+          "discount_pct": 3,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 33.4,
+          "score_breakdown": {
+            "cosine": 0.1465,
+            "rec_score_norm": 0.943,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Plumbing - Drainage": [
+        {
+          "item_name": "Drain Cover (Floor Access)",
+          "brand": "Steel Fabricator",
+          "quality_grade": "SS 304",
+          "unit": "per piece",
+          "market_price_pkr": 2700,
+          "final_price_pkr": 2700,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 38.6,
+          "score_breakdown": {
+            "cosine": 0.2151,
+            "rec_score_norm": 0.983,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "PVC Manhole Chamber (300mm dia)",
+          "brand": "National Foam",
+          "quality_grade": "300mm",
+          "unit": "per piece",
+          "market_price_pkr": 11020,
+          "final_price_pkr": 11020,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Karachi Steel Mart",
+          "recommendation_score": 36.2,
+          "score_breakdown": {
+            "cosine": 0.1768,
+            "rec_score_norm": 0.983,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Manhole Cover (CI) - 18x18",
+          "brand": "Local Foundry",
+          "quality_grade": "Medium Duty",
+          "unit": "per piece",
+          "market_price_pkr": 5270,
+          "final_price_pkr": 4740,
+          "discount_pct": 10,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 35.9,
+          "score_breakdown": {
+            "cosine": 0.1769,
+            "rec_score_norm": 0.968,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Plumbing - Water System": [
+        {
+          "item_name": "Water Tank (Underground - Fibre) 1000 Gallon",
+          "brand": "Pakson",
+          "quality_grade": "2000 Gal",
+          "unit": "per piece",
+          "market_price_pkr": 86930,
+          "final_price_pkr": 86930,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 44.4,
+          "score_breakdown": {
+            "cosine": 0.3432,
+            "rec_score_norm": 0.852,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Water Tank (Overhead - Plastic) 200 Gallon",
+          "brand": "Al-Rehman",
+          "quality_grade": "500 Gal",
+          "unit": "per piece",
+          "market_price_pkr": 11000,
+          "final_price_pkr": 10450,
+          "discount_pct": 5,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 41.7,
+          "score_breakdown": {
+            "cosine": 0.2607,
+            "rec_score_norm": 0.986,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Solar Water Heater (Evacuated Tube) 100L",
+          "brand": "Pakistan Solar",
+          "quality_grade": "200L",
+          "unit": "per system",
+          "market_price_pkr": 44000,
+          "final_price_pkr": 40920,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sindh Construction Hub",
+          "recommendation_score": 40.2,
+          "score_breakdown": {
+            "cosine": 0.2911,
+            "rec_score_norm": 0.815,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Electrical - Wiring & Cables": [
+        {
+          "item_name": "Aluminum Cable (Mains) 16mm",
+          "brand": "Pakistan Cables",
+          "quality_grade": "10mm",
+          "unit": "per meter",
+          "market_price_pkr": 340,
+          "final_price_pkr": 340,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sindh Construction Hub",
+          "recommendation_score": 48.6,
+          "score_breakdown": {
+            "cosine": 0.3841,
+            "rec_score_norm": 0.934,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Copper Wire 1.5mm (Single Core)",
+          "brand": "Pakistan Cables",
+          "quality_grade": "4mm",
+          "unit": "per meter",
+          "market_price_pkr": 100,
+          "final_price_pkr": 100,
+          "discount_pct": 5,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 45.2,
+          "score_breakdown": {
+            "cosine": 0.3144,
+            "rec_score_norm": 0.99,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Armoured Cable (SWA) 4mm 4-Core",
+          "brand": "Pakistan Cables",
+          "quality_grade": "4-core",
+          "unit": "per meter",
+          "market_price_pkr": 850,
+          "final_price_pkr": 790,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 43.6,
+          "score_breakdown": {
+            "cosine": 0.3007,
+            "rec_score_norm": 0.954,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Copper Wire 4mm (Single Core)",
+          "brand": "Pakistan Cables",
+          "quality_grade": "6mm",
+          "unit": "per meter",
+          "market_price_pkr": 240,
+          "final_price_pkr": 240,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 43,
+          "score_breakdown": {
+            "cosine": 0.3156,
+            "rec_score_norm": 0.873,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Electrical - Switchgear": [
+        {
+          "item_name": "Socket (13A with Switch) - Modular",
+          "brand": "Schneider",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 840,
+          "final_price_pkr": 800,
+          "discount_pct": 5,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Karachi Steel Mart",
+          "recommendation_score": 45,
+          "score_breakdown": {
+            "cosine": 0.159,
+            "rec_score_norm": 0.983,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Fan Speed Regulator",
+          "brand": "Local Brand",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 1390,
+          "final_price_pkr": 1350,
+          "discount_pct": 3,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Karachi Steel Mart",
+          "recommendation_score": 43.5,
+          "score_breakdown": {
+            "cosine": 0.1556,
+            "rec_score_norm": 0.918,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "3-Pin Plug Top (13A)",
+          "brand": "Clipsal",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 210,
+          "final_price_pkr": 200,
+          "discount_pct": 3,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 41.1,
+          "score_breakdown": {
+            "cosine": 0.1478,
+            "rec_score_norm": 0.824,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Switch (2-Gang 2-Way) - Modular",
+          "brand": "Clipsal",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 1370,
+          "final_price_pkr": 1230,
+          "discount_pct": 10,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 40.6,
+          "score_breakdown": {
+            "cosine": 0.1195,
+            "rec_score_norm": 0.89,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        }
+      ],
+      "Electrical - Protection": [
+        {
+          "item_name": "MCB (Miniature Circuit Breaker) 10A",
+          "brand": "Hager",
+          "quality_grade": "63A",
+          "unit": "per piece",
+          "market_price_pkr": 1800,
+          "final_price_pkr": 1800,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 41.1,
+          "score_breakdown": {
+            "cosine": 0.2597,
+            "rec_score_norm": 0.962,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "MCB 20A",
+          "brand": "ABB",
+          "quality_grade": "20A",
+          "unit": "per piece",
+          "market_price_pkr": 2040,
+          "final_price_pkr": 2000,
+          "discount_pct": 2,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 40.2,
+          "score_breakdown": {
+            "cosine": 0.2346,
+            "rec_score_norm": 0.997,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "MCB 63A (Main Breaker)",
+          "brand": "Hager",
+          "quality_grade": "63A",
+          "unit": "per piece",
+          "market_price_pkr": 4060,
+          "final_price_pkr": 3980,
+          "discount_pct": 2,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Karachi Steel Mart",
+          "recommendation_score": 40.1,
+          "score_breakdown": {
+            "cosine": 0.2509,
+            "rec_score_norm": 0.942,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "RCCB (Residual Current) 30mA 40A",
+          "brand": "ABB",
+          "quality_grade": "40A",
+          "unit": "per piece",
+          "market_price_pkr": 11960,
+          "final_price_pkr": 10170,
+          "discount_pct": 15,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Sea View Building Materials",
+          "recommendation_score": 39.8,
+          "score_breakdown": {
+            "cosine": 0.2353,
+            "rec_score_norm": 0.975,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Electrical - Lighting & Fixtures": [
+        {
+          "item_name": "Chandelier (Decorative)",
+          "brand": "Lahore Lights",
+          "quality_grade": "Large 18-light",
+          "unit": "per piece",
+          "market_price_pkr": 27130,
+          "final_price_pkr": 25770,
+          "discount_pct": 5,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 44.8,
+          "score_breakdown": {
+            "cosine": 0.3248,
+            "rec_score_norm": 0.935,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "BLDC Ceiling Fan 56 inch (Energy Saver)",
+          "brand": "Pak Fan BLDC",
+          "quality_grade": "56\"",
+          "unit": "per piece",
+          "market_price_pkr": 17300,
+          "final_price_pkr": 16950,
+          "discount_pct": 2,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Korangi Industrial Supplier",
+          "recommendation_score": 40.7,
+          "score_breakdown": {
+            "cosine": 0.2521,
+            "rec_score_norm": 0.965,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Exhaust Fan (Wall) 6 inch",
+          "brand": "Pak Fan",
+          "quality_grade": "4\"",
+          "unit": "per piece",
+          "market_price_pkr": 4400,
+          "final_price_pkr": 4090,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 40.7,
+          "score_breakdown": {
+            "cosine": 0.2703,
+            "rec_score_norm": 0.905,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Sanitary Items": [
+        {
+          "item_name": "Urinal (Wall Hung)",
+          "brand": "Kohler",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 9660,
+          "final_price_pkr": 9660,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "3 years",
+          "supplier": "Al-Hamza Suppliers",
+          "recommendation_score": 50.5,
+          "score_breakdown": {
+            "cosine": 0.3156,
+            "rec_score_norm": 1,
+            "quality_match": 1,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Commode (Wall Hung WC)",
+          "brand": "Duravit",
+          "quality_grade": "Standard",
+          "unit": "per piece (WC only)",
+          "market_price_pkr": 37210,
+          "final_price_pkr": 37210,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "3 years",
+          "supplier": "Karachi Steel Mart",
+          "recommendation_score": 50.3,
+          "score_breakdown": {
+            "cosine": 0.2467,
+            "rec_score_norm": 0.963,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Squat Toilet (Eastern WC)",
+          "brand": "Cotto",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 3760,
+          "final_price_pkr": 3760,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "3 years",
+          "supplier": "Sindh Construction Hub",
+          "recommendation_score": 48,
+          "score_breakdown": {
+            "cosine": 0.231,
+            "rec_score_norm": 0.898,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        }
+      ],
+      "Hardware & Fasteners": [
+        {
+          "item_name": "Nut & Bolt Set (GI) M10x50",
+          "brand": "Ali Hardware",
+          "quality_grade": "M6",
+          "unit": "per piece",
+          "market_price_pkr": 60,
+          "final_price_pkr": 60,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 40.2,
+          "score_breakdown": {
+            "cosine": 0.2428,
+            "rec_score_norm": 0.972,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Anchor Bolt (GI) M10",
+          "brand": "Hilti",
+          "quality_grade": "M12",
+          "unit": "per piece",
+          "market_price_pkr": 120,
+          "final_price_pkr": 110,
+          "discount_pct": 10,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Rehman Hardware Karachi",
+          "recommendation_score": 38,
+          "score_breakdown": {
+            "cosine": 0.2184,
+            "rec_score_norm": 0.941,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Chemicals & Treatments": [
+        {
+          "item_name": "Alkali Resistant Primer (for Tile on Gypsum)",
+          "brand": "Weber",
+          "quality_grade": "Standard",
+          "unit": "per liter",
+          "market_price_pkr": 1160,
+          "final_price_pkr": 1080,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Local Hardware Store",
+          "recommendation_score": 43.2,
+          "score_breakdown": {
+            "cosine": 0.2138,
+            "rec_score_norm": 0.965,
+            "quality_match": 1,
+            "city_match": 0
+          }
+        }
+      ]
+    },
+    "total_estimated_cost": null
+  },
+  {
+    "id": "d68492f4-8b4f-4f63-914e-51c65dced1f0",
+    "project_name": "ham",
+    "created_at": "2026-04-27T10:40:15.714789Z",
+    "input": {
+      "text": "i want to make a school",
+      "area": "",
+      "city": "Lahore",
+      "quality": "Standard"
+    },
+    "recommendations": {
+      "Raw Materials": [
+        {
+          "item_name": "Fly Ash Block",
+          "brand": "AAC Block Pakistan",
+          "quality_grade": "Standard",
+          "unit": "piece",
+          "market_price_pkr": 90,
+          "final_price_pkr": 90,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Hamza Suppliers",
+          "recommendation_score": 57,
+          "score_breakdown": {
+            "cosine": 0.4168,
+            "rec_score_norm": 0.996,
+            "quality_match": 1,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Brick Awwal (1st Grade)",
+          "brand": "Lahore Brick Works",
+          "quality_grade": "Awwal (1st)",
+          "unit": "1000 bricks",
+          "market_price_pkr": 22140,
+          "final_price_pkr": 21480,
+          "discount_pct": 3,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 54.8,
+          "score_breakdown": {
+            "cosine": 0.5351,
+            "rec_score_norm": 1,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Ravi Sand (Fine)",
+          "brand": "Lahore Sand Supply",
+          "quality_grade": "Medium",
+          "unit": "100 cft (one trolley)",
+          "market_price_pkr": 11900,
+          "final_price_pkr": 11540,
+          "discount_pct": 3,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Hamza Suppliers",
+          "recommendation_score": 53,
+          "score_breakdown": {
+            "cosine": 0.4434,
+            "rec_score_norm": 0.961,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Limestone Stone",
+          "brand": "Islamabad Stone",
+          "quality_grade": "Grade-B",
+          "unit": "per cft",
+          "market_price_pkr": 180,
+          "final_price_pkr": 180,
+          "discount_pct": 0,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Hamza Suppliers",
+          "recommendation_score": 51,
+          "score_breakdown": {
+            "cosine": 0.4864,
+            "rec_score_norm": 0.967,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Concrete Block (Solid)",
+          "brand": "Islamabad Block Works",
+          "quality_grade": "8-inch",
+          "unit": "piece",
+          "market_price_pkr": 130,
+          "final_price_pkr": 110,
+          "discount_pct": 15,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Ravi Hardware Store",
+          "recommendation_score": 50.7,
+          "score_breakdown": {
+            "cosine": 0.4064,
+            "rec_score_norm": 0.964,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Concrete Block (Hollow)",
+          "brand": "Islamabad Block Works",
+          "quality_grade": "4-inch",
+          "unit": "piece",
+          "market_price_pkr": 90,
+          "final_price_pkr": 90,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Lahore Building Materials Depot",
+          "recommendation_score": 50.6,
+          "score_breakdown": {
+            "cosine": 0.3959,
+            "rec_score_norm": 0.995,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Brick B-Grade (2nd Grade)",
+          "brand": "Ravi Kiln",
+          "quality_grade": "B-Grade (2nd)",
+          "unit": "1000 bricks",
+          "market_price_pkr": 16310,
+          "final_price_pkr": 15980,
+          "discount_pct": 2,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Pak Construction Center",
+          "recommendation_score": 46.3,
+          "score_breakdown": {
+            "cosine": 0.4691,
+            "rec_score_norm": 0.791,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "RCC & Structural": [
+        {
+          "item_name": "Centering Props (Adjustable Steel)",
+          "brand": "Pakistani Formwork Co.",
+          "quality_grade": "3m",
+          "unit": "per piece (rental/month)",
+          "market_price_pkr": 350,
+          "final_price_pkr": 300,
+          "discount_pct": 15,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Local Hardware Store",
+          "recommendation_score": 45.9,
+          "score_breakdown": {
+            "cosine": 0.4264,
+            "rec_score_norm": 0.91,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Steel Clamps (Scaffolding)",
+          "brand": "Local Hardware",
+          "quality_grade": "Putlog",
+          "unit": "per piece",
+          "market_price_pkr": 200,
+          "final_price_pkr": 180,
+          "discount_pct": 10,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 40.1,
+          "score_breakdown": {
+            "cosine": 0.4019,
+            "rec_score_norm": 0.7,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "Masonry & Wall Work": [
+        {
+          "item_name": "Plaster Sand (Fine)",
+          "brand": "Local Supplier",
+          "quality_grade": "Medium",
+          "unit": "100 cft",
+          "market_price_pkr": 13520,
+          "final_price_pkr": 11490,
+          "discount_pct": 15,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Pak Construction Center",
+          "recommendation_score": 54.4,
+          "score_breakdown": {
+            "cosine": 0.4517,
+            "rec_score_norm": 1,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Lime (Chuna)",
+          "brand": "Construction Lime",
+          "quality_grade": "Quick Lime",
+          "unit": "per 50kg bag",
+          "market_price_pkr": 580,
+          "final_price_pkr": 490,
+          "discount_pct": 15,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 46.7,
+          "score_breakdown": {
+            "cosine": 0.4138,
+            "rec_score_norm": 0.992,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "Roofing Materials": [
+        {
+          "item_name": "GI Roofing Sheet (Corrugated)",
+          "brand": "Gul Ahmed Steel",
+          "quality_grade": "0.55mm",
+          "unit": "per sft",
+          "market_price_pkr": 180,
+          "final_price_pkr": 170,
+          "discount_pct": 3,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Shah Brothers Merchants",
+          "recommendation_score": 44.8,
+          "score_breakdown": {
+            "cosine": 0.3138,
+            "rec_score_norm": 0.968,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Color Coated Sheet (PPGI)",
+          "brand": "Gul Ahmed Steel",
+          "quality_grade": "0.40mm",
+          "unit": "per sft",
+          "market_price_pkr": 220,
+          "final_price_pkr": 190,
+          "discount_pct": 15,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Shah Brothers Merchants",
+          "recommendation_score": 42.2,
+          "score_breakdown": {
+            "cosine": 0.2747,
+            "rec_score_norm": 0.967,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Heat Proofing Tile (China Clay)",
+          "brand": "China Import",
+          "quality_grade": "White",
+          "unit": "per sft",
+          "market_price_pkr": 200,
+          "final_price_pkr": 200,
+          "discount_pct": 2,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Ravi Hardware Store",
+          "recommendation_score": 41.2,
+          "score_breakdown": {
+            "cosine": 0.2506,
+            "rec_score_norm": 0.995,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Doors & Windows": [
+        {
+          "item_name": "Glass (Clear Float) 5mm",
+          "brand": "Pakistan Float Glass",
+          "quality_grade": "8mm",
+          "unit": "per sft",
+          "market_price_pkr": 170,
+          "final_price_pkr": 170,
+          "discount_pct": 2,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 45.7,
+          "score_breakdown": {
+            "cosine": 0.4312,
+            "rec_score_norm": 0.885,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Glass (Tempered) 8mm",
+          "brand": "Pakistan Float Glass",
+          "quality_grade": "10mm",
+          "unit": "per sft",
+          "market_price_pkr": 520,
+          "final_price_pkr": 440,
+          "discount_pct": 15,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Local Hardware Store",
+          "recommendation_score": 45.6,
+          "score_breakdown": {
+            "cosine": 0.4146,
+            "rec_score_norm": 0.931,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Glass (Frosted/Obscure) 5mm",
+          "brand": "Pakistan Float Glass",
+          "quality_grade": "Patterned",
+          "unit": "per sft",
+          "market_price_pkr": 270,
+          "final_price_pkr": 270,
+          "discount_pct": 0,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Local Hardware Store",
+          "recommendation_score": 45.1,
+          "score_breakdown": {
+            "cosine": 0.3995,
+            "rec_score_norm": 0.958,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Door Frame (Deodar Wood)",
+          "brand": "Rauf Furniture",
+          "quality_grade": "Sheesham",
+          "unit": "per frame (set)",
+          "market_price_pkr": 6340,
+          "final_price_pkr": 6150,
+          "discount_pct": 3,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 41.5,
+          "score_breakdown": {
+            "cosine": 0.4159,
+            "rec_score_norm": 0.723,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "Wood & Carpentry": [
+        {
+          "item_name": "Deodar Timber",
+          "brand": "Peshawar Timber",
+          "quality_grade": "B-Grade",
+          "unit": "per cft",
+          "market_price_pkr": 3350,
+          "final_price_pkr": 3250,
+          "discount_pct": 3,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Pak Construction Center",
+          "recommendation_score": 50.5,
+          "score_breakdown": {
+            "cosine": 0.4326,
+            "rec_score_norm": 0.871,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Sheesham Timber (Indian Rosewood)",
+          "brand": "Timber Market Lahore",
+          "quality_grade": "B-Grade",
+          "unit": "per cft",
+          "market_price_pkr": 4700,
+          "final_price_pkr": 4230,
+          "discount_pct": 10,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "City Construction Market",
+          "recommendation_score": 49.1,
+          "score_breakdown": {
+            "cosine": 0.4245,
+            "rec_score_norm": 0.827,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Veneer Sheet (Natural Wood)",
+          "brand": "Local Supplier",
+          "quality_grade": "Teak",
+          "unit": "per sheet (8x4 ft)",
+          "market_price_pkr": 4680,
+          "final_price_pkr": 4680,
+          "discount_pct": 0,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Hamza Suppliers",
+          "recommendation_score": 43,
+          "score_breakdown": {
+            "cosine": 0.3959,
+            "rec_score_norm": 0.865,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "Paint & Finishing": [
+        {
+          "item_name": "Emulsion Paint (Interior)",
+          "brand": "Nippon",
+          "quality_grade": "Standard",
+          "unit": "per 20 liter",
+          "market_price_pkr": 9820,
+          "final_price_pkr": 8350,
+          "discount_pct": 15,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Shah Brothers Merchants",
+          "recommendation_score": 48.5,
+          "score_breakdown": {
+            "cosine": 0.2145,
+            "rec_score_norm": 0.979,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Primer (Interior Wall Primer)",
+          "brand": "ICI",
+          "quality_grade": "Standard",
+          "unit": "per 20 liter",
+          "market_price_pkr": 5780,
+          "final_price_pkr": 5380,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Pak Construction Center",
+          "recommendation_score": 47.5,
+          "score_breakdown": {
+            "cosine": 0.2747,
+            "rec_score_norm": 0.98,
+            "quality_match": 1,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Wall Putty (Application Labor+Material)",
+          "brand": "Birla White",
+          "quality_grade": "1 Coat",
+          "unit": "per sft",
+          "market_price_pkr": 50,
+          "final_price_pkr": 40,
+          "discount_pct": 15,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 45.1,
+          "score_breakdown": {
+            "cosine": 0.3869,
+            "rec_score_norm": 0.997,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "Flooring Materials": [
+        {
+          "item_name": "Granite (Local - Balochistan Black)",
+          "brand": "Karachi Stone",
+          "quality_grade": "A-Grade",
+          "unit": "per sft",
+          "market_price_pkr": 250,
+          "final_price_pkr": 210,
+          "discount_pct": 15,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Local Hardware Store",
+          "recommendation_score": 52.2,
+          "score_breakdown": {
+            "cosine": 0.418,
+            "rec_score_norm": 1,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Marble (Imported - Turkish Burdur)",
+          "brand": "Turkish Stone",
+          "quality_grade": "A-Grade",
+          "unit": "per sft",
+          "market_price_pkr": 600,
+          "final_price_pkr": 590,
+          "discount_pct": 2,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "City Construction Market",
+          "recommendation_score": 50.9,
+          "score_breakdown": {
+            "cosine": 0.3988,
+            "rec_score_norm": 1,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Marble (Local - Sunny Beige)",
+          "brand": "Lahore Marble Market",
+          "quality_grade": "Sunny Beige",
+          "unit": "per sft",
+          "market_price_pkr": 230,
+          "final_price_pkr": 200,
+          "discount_pct": 15,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 46.1,
+          "score_breakdown": {
+            "cosine": 0.4363,
+            "rec_score_norm": 0.888,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "Kitchen Materials": [
+        {
+          "item_name": "Quartz Countertop (Engineered)",
+          "brand": "Local Brand",
+          "quality_grade": "Standard",
+          "unit": "per running foot",
+          "market_price_pkr": 6560,
+          "final_price_pkr": 5580,
+          "discount_pct": 15,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Ravi Hardware Store",
+          "recommendation_score": 47.2,
+          "score_breakdown": {
+            "cosine": 0.2125,
+            "rec_score_norm": 0.921,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        }
+      ],
+      "Plumbing - Pipes & Fittings": [
+        {
+          "item_name": "GI Pipe 1 inch",
+          "brand": "Pakistan Steel GI",
+          "quality_grade": "Medium",
+          "unit": "per 20ft length",
+          "market_price_pkr": 2840,
+          "final_price_pkr": 2840,
+          "discount_pct": 0,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Pak Construction Center",
+          "recommendation_score": 48.2,
+          "score_breakdown": {
+            "cosine": 0.3609,
+            "rec_score_norm": 0.987,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "GI Pipe 3/4 inch",
+          "brand": "Pakistan Steel GI",
+          "quality_grade": "Medium",
+          "unit": "per 20ft length",
+          "market_price_pkr": 2720,
+          "final_price_pkr": 2720,
+          "discount_pct": 0,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 47.8,
+          "score_breakdown": {
+            "cosine": 0.3551,
+            "rec_score_norm": 0.986,
+            "quality_match": 0.5,
+            "city_match": 0
+          }
+        }
+      ],
+      "Plumbing - Taps & Fixtures": [
+        {
+          "item_name": "Hand Shower Set",
+          "brand": "Hansgrohe",
+          "quality_grade": "Standard",
+          "unit": "per set",
+          "market_price_pkr": 5100,
+          "final_price_pkr": 5100,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Lahore Building Materials Depot",
+          "recommendation_score": 44.3,
+          "score_breakdown": {
+            "cosine": 0.1577,
+            "rec_score_norm": 0.952,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Bath Mixer (Wall Mounted)",
+          "brand": "Sanipex",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 18730,
+          "final_price_pkr": 18730,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Ravi Hardware Store",
+          "recommendation_score": 43.8,
+          "score_breakdown": {
+            "cosine": 0.148,
+            "rec_score_norm": 0.96,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Pillar Tap (Bib Cock) - Chrome",
+          "brand": "Local Brand",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 2300,
+          "final_price_pkr": 2300,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Ravi Hardware Store",
+          "recommendation_score": 43.6,
+          "score_breakdown": {
+            "cosine": 0.1706,
+            "rec_score_norm": 0.878,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Wash Basin (Wall Hung - Ceramic)",
+          "brand": "Roca",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 8280,
+          "final_price_pkr": 7450,
+          "discount_pct": 10,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "National Building Materials",
+          "recommendation_score": 43.6,
+          "score_breakdown": {
+            "cosine": 0.2299,
+            "rec_score_norm": 0.931,
+            "quality_match": 1,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Mixer Tap (Basin Mixer - Single Lever)",
+          "brand": "Toto",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 13100,
+          "final_price_pkr": 12710,
+          "discount_pct": 3,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Ravi Hardware Store",
+          "recommendation_score": 43.5,
+          "score_breakdown": {
+            "cosine": 0.1374,
+            "rec_score_norm": 0.976,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Wash Basin (Pedestal)",
+          "brand": "Roca",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 11100,
+          "final_price_pkr": 10880,
+          "discount_pct": 2,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Lahore Building Materials Depot",
+          "recommendation_score": 42.9,
+          "score_breakdown": {
+            "cosine": 0.1259,
+            "rec_score_norm": 0.986,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Bath Shower (Overhead + Hand)",
+          "brand": "Grohe",
+          "quality_grade": "Standard",
+          "unit": "per set",
+          "market_price_pkr": 16070,
+          "final_price_pkr": 16070,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "2 years",
+          "supplier": "Shah Brothers Merchants",
+          "recommendation_score": 42.6,
+          "score_breakdown": {
+            "cosine": 0.1207,
+            "rec_score_norm": 0.99,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        }
+      ],
+      "Plumbing - Valves & Control": [
+        {
+          "item_name": "Pressure Reducing Valve (PRV)",
+          "brand": "Watts",
+          "quality_grade": "1\"",
+          "unit": "per piece",
+          "market_price_pkr": 6850,
+          "final_price_pkr": 6850,
+          "discount_pct": 0,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "City Construction Market",
+          "recommendation_score": 34.8,
+          "score_breakdown": {
+            "cosine": 0.2345,
+            "rec_score_norm": 0.978,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Ball Valve (1/2 inch - Brass Full Bore)",
+          "brand": "Kitz",
+          "quality_grade": "3/4\"",
+          "unit": "per piece",
+          "market_price_pkr": 560,
+          "final_price_pkr": 480,
+          "discount_pct": 15,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Punjab Building Center",
+          "recommendation_score": 34.5,
+          "score_breakdown": {
+            "cosine": 0.1485,
+            "rec_score_norm": 0.991,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Gate Valve (1/2 inch - Brass)",
+          "brand": "Kitz",
+          "quality_grade": "2\"",
+          "unit": "per piece",
+          "market_price_pkr": 760,
+          "final_price_pkr": 680,
+          "discount_pct": 10,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Punjab Building Center",
+          "recommendation_score": 33.3,
+          "score_breakdown": {
+            "cosine": 0.1508,
+            "rec_score_norm": 0.925,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "PPRC Ball Valve (20mm)",
+          "brand": "Interplast",
+          "quality_grade": "20mm",
+          "unit": "per piece",
+          "market_price_pkr": 420,
+          "final_price_pkr": 420,
+          "discount_pct": 0,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Hamza Suppliers",
+          "recommendation_score": 32.3,
+          "score_breakdown": {
+            "cosine": 0.2104,
+            "rec_score_norm": 0.93,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "Plumbing - Drainage": [
+        {
+          "item_name": "PVC Manhole Chamber (300mm dia)",
+          "brand": "Dadex",
+          "quality_grade": "450mm",
+          "unit": "per piece",
+          "market_price_pkr": 8510,
+          "final_price_pkr": 8250,
+          "discount_pct": 3,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Punjab Building Center",
+          "recommendation_score": 37,
+          "score_breakdown": {
+            "cosine": 0.2053,
+            "rec_score_norm": 0.931,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Drain Cover (Floor Access)",
+          "brand": "Steel Fabricator",
+          "quality_grade": "SS 304",
+          "unit": "per piece",
+          "market_price_pkr": 2370,
+          "final_price_pkr": 2250,
+          "discount_pct": 5,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Ravi Hardware Store",
+          "recommendation_score": 35.6,
+          "score_breakdown": {
+            "cosine": 0.1953,
+            "rec_score_norm": 0.897,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Manhole Cover (CI) - 18x18",
+          "brand": "Local Foundry",
+          "quality_grade": "Heavy Duty",
+          "unit": "per piece",
+          "market_price_pkr": 5570,
+          "final_price_pkr": 5570,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Punjab Building Center",
+          "recommendation_score": 34,
+          "score_breakdown": {
+            "cosine": 0.1722,
+            "rec_score_norm": 0.888,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Plumbing - Water System": [
+        {
+          "item_name": "Water Tank (Underground - Fibre) 1000 Gallon",
+          "brand": "Pakson",
+          "quality_grade": "2000 Gal",
+          "unit": "per piece",
+          "market_price_pkr": 54770,
+          "final_price_pkr": 53130,
+          "discount_pct": 3,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Punjab Building Center",
+          "recommendation_score": 40.1,
+          "score_breakdown": {
+            "cosine": 0.2553,
+            "rec_score_norm": 0.926,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Water Tank (Overhead - Plastic) 200 Gallon",
+          "brand": "Al-Rehman",
+          "quality_grade": "500 Gal",
+          "unit": "per piece",
+          "market_price_pkr": 13340,
+          "final_price_pkr": 11340,
+          "discount_pct": 15,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Hamza Suppliers",
+          "recommendation_score": 38.4,
+          "score_breakdown": {
+            "cosine": 0.2849,
+            "rec_score_norm": 0.992,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "Electrical - Wiring & Cables": [
+        {
+          "item_name": "Aluminum Cable (Mains) 16mm",
+          "brand": "Pakistan Cables",
+          "quality_grade": "10mm",
+          "unit": "per meter",
+          "market_price_pkr": 310,
+          "final_price_pkr": 310,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Noor Construction Supplies",
+          "recommendation_score": 44.3,
+          "score_breakdown": {
+            "cosine": 0.3239,
+            "rec_score_norm": 0.911,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Copper Wire 4mm (Single Core)",
+          "brand": "Pakistan Cables",
+          "quality_grade": "4mm",
+          "unit": "per meter",
+          "market_price_pkr": 230,
+          "final_price_pkr": 200,
+          "discount_pct": 15,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Capital City Builders Supply",
+          "recommendation_score": 42.1,
+          "score_breakdown": {
+            "cosine": 0.3474,
+            "rec_score_norm": 0.977,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Flexible Cable 3-Core 1.5mm",
+          "brand": "Pakistan Cables",
+          "quality_grade": "0.75mm",
+          "unit": "per meter",
+          "market_price_pkr": 170,
+          "final_price_pkr": 160,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Shah Brothers Merchants",
+          "recommendation_score": 42,
+          "score_breakdown": {
+            "cosine": 0.2713,
+            "rec_score_norm": 0.968,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Copper Wire 1.5mm (Single Core)",
+          "brand": "Pakistan Cables",
+          "quality_grade": "1mm",
+          "unit": "per meter",
+          "market_price_pkr": 90,
+          "final_price_pkr": 90,
+          "discount_pct": 0,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "City Construction Market",
+          "recommendation_score": 41.1,
+          "score_breakdown": {
+            "cosine": 0.3349,
+            "rec_score_norm": 0.969,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        }
+      ],
+      "Electrical - Switchgear": [
+        {
+          "item_name": "Fan Speed Regulator",
+          "brand": "Clipsal",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 1060,
+          "final_price_pkr": 990,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Shah Brothers Merchants",
+          "recommendation_score": 41.4,
+          "score_breakdown": {
+            "cosine": 0.112,
+            "rec_score_norm": 0.954,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "3-Pin Plug Top (13A)",
+          "brand": "MK",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 290,
+          "final_price_pkr": 260,
+          "discount_pct": 10,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Lahore Building Materials Depot",
+          "recommendation_score": 40.9,
+          "score_breakdown": {
+            "cosine": 0.1117,
+            "rec_score_norm": 0.931,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Switch (2-Gang 2-Way) - Modular",
+          "brand": "Schneider",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 2040,
+          "final_price_pkr": 2040,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Punjab Building Center",
+          "recommendation_score": 40.4,
+          "score_breakdown": {
+            "cosine": 0.0896,
+            "rec_score_norm": 0.977,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "Socket (13A with Switch) - Modular",
+          "brand": "Power",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 1030,
+          "final_price_pkr": 1030,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Local Hardware Store",
+          "recommendation_score": 39.7,
+          "score_breakdown": {
+            "cosine": 0.1679,
+            "rec_score_norm": 0.941,
+            "quality_match": 1,
+            "city_match": 0
+          }
+        }
+      ],
+      "Electrical - Protection": [
+        {
+          "item_name": "MCB 63A (Main Breaker)",
+          "brand": "Hager",
+          "quality_grade": "50A",
+          "unit": "per piece",
+          "market_price_pkr": 4640,
+          "final_price_pkr": 4640,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Punjab Building Center",
+          "recommendation_score": 38.2,
+          "score_breakdown": {
+            "cosine": 0.2035,
+            "rec_score_norm": 0.997,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "MCB 20A",
+          "brand": "ABB",
+          "quality_grade": "20A",
+          "unit": "per piece",
+          "market_price_pkr": 1660,
+          "final_price_pkr": 1610,
+          "discount_pct": 3,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "National Building Materials",
+          "recommendation_score": 36.8,
+          "score_breakdown": {
+            "cosine": 0.2605,
+            "rec_score_norm": 0.994,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "MCB (Miniature Circuit Breaker) 10A",
+          "brand": "Schneider",
+          "quality_grade": "25A",
+          "unit": "per piece",
+          "market_price_pkr": 1910,
+          "final_price_pkr": 1870,
+          "discount_pct": 2,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Lahore Building Materials Depot",
+          "recommendation_score": 36.7,
+          "score_breakdown": {
+            "cosine": 0.2071,
+            "rec_score_norm": 0.911,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        },
+        {
+          "item_name": "RCCB (Residual Current) 30mA 40A",
+          "brand": "ABB",
+          "quality_grade": "40A",
+          "unit": "per piece",
+          "market_price_pkr": 11330,
+          "final_price_pkr": 11100,
+          "discount_pct": 2,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Al-Hamza Suppliers",
+          "recommendation_score": 36.3,
+          "score_breakdown": {
+            "cosine": 0.2621,
+            "rec_score_norm": 0.964,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "RCBO (Combined MCB+RCCB) 16A",
+          "brand": "ABB",
+          "quality_grade": "20A",
+          "unit": "per piece",
+          "market_price_pkr": 7660,
+          "final_price_pkr": 7660,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Lahore Building Materials Depot",
+          "recommendation_score": 35.8,
+          "score_breakdown": {
+            "cosine": 0.172,
+            "rec_score_norm": 0.981,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Electrical - Lighting & Fixtures": [
+        {
+          "item_name": "Chandelier (Decorative)",
+          "brand": "Lahore Lights",
+          "quality_grade": "Small 6-light",
+          "unit": "per piece",
+          "market_price_pkr": 38710,
+          "final_price_pkr": 36770,
+          "discount_pct": 5,
+          "availability": "Available on Order",
+          "lead_time": "7-14 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Pak Construction Center",
+          "recommendation_score": 42.1,
+          "score_breakdown": {
+            "cosine": 0.3432,
+            "rec_score_norm": 0.988,
+            "quality_match": 0,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "BLDC Ceiling Fan 56 inch (Energy Saver)",
+          "brand": "Pak Fan BLDC",
+          "quality_grade": "56\"",
+          "unit": "per piece",
+          "market_price_pkr": 22110,
+          "final_price_pkr": 21670,
+          "discount_pct": 2,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Shah Brothers Merchants",
+          "recommendation_score": 39.2,
+          "score_breakdown": {
+            "cosine": 0.2287,
+            "rec_score_norm": 0.967,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Sanitary Items": [
+        {
+          "item_name": "Urinal (Wall Hung)",
+          "brand": "Kohler",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 9660,
+          "final_price_pkr": 9660,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "3 years",
+          "supplier": "Al-Hamza Suppliers",
+          "recommendation_score": 47.9,
+          "score_breakdown": {
+            "cosine": 0.2759,
+            "rec_score_norm": 1,
+            "quality_match": 1,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Commode (Wall Hung WC)",
+          "brand": "Toto",
+          "quality_grade": "Standard",
+          "unit": "per piece (WC only)",
+          "market_price_pkr": 49700,
+          "final_price_pkr": 49700,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "3 years",
+          "supplier": "City Construction Market",
+          "recommendation_score": 47.3,
+          "score_breakdown": {
+            "cosine": 0.2743,
+            "rec_score_norm": 0.974,
+            "quality_match": 1,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Squat Toilet (Eastern WC)",
+          "brand": "Toto",
+          "quality_grade": "Standard",
+          "unit": "per piece",
+          "market_price_pkr": 4920,
+          "final_price_pkr": 4920,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "3 years",
+          "supplier": "City Construction Market",
+          "recommendation_score": 45,
+          "score_breakdown": {
+            "cosine": 0.2337,
+            "rec_score_norm": 0.991,
+            "quality_match": 1,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Commode (Western WC - Close Coupled)",
+          "brand": "Cotto",
+          "quality_grade": "Standard",
+          "unit": "per piece (set)",
+          "market_price_pkr": 38250,
+          "final_price_pkr": 36340,
+          "discount_pct": 5,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "3 years",
+          "supplier": "Punjab Building Center",
+          "recommendation_score": 44,
+          "score_breakdown": {
+            "cosine": 0.1532,
+            "rec_score_norm": 0.952,
+            "quality_match": 1,
+            "city_match": 1
+          }
+        }
+      ],
+      "Hardware & Fasteners": [
+        {
+          "item_name": "Nut & Bolt Set (GI) M10x50",
+          "brand": "Local Supplier",
+          "quality_grade": "M16",
+          "unit": "per piece",
+          "market_price_pkr": 50,
+          "final_price_pkr": 50,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Punjab Building Center",
+          "recommendation_score": 38.1,
+          "score_breakdown": {
+            "cosine": 0.2172,
+            "rec_score_norm": 0.949,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ],
+      "Chemicals & Treatments": [
+        {
+          "item_name": "Alkali Resistant Primer (for Tile on Gypsum)",
+          "brand": "Mapei",
+          "quality_grade": "Standard",
+          "unit": "per liter",
+          "market_price_pkr": 1210,
+          "final_price_pkr": 1130,
+          "discount_pct": 7,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Local Hardware Store",
+          "recommendation_score": 43.8,
+          "score_breakdown": {
+            "cosine": 0.2433,
+            "rec_score_norm": 0.901,
+            "quality_match": 1,
+            "city_match": 0
+          }
+        },
+        {
+          "item_name": "Concrete Bonding Agent",
+          "brand": "Pidilite Dr. Fixit",
+          "quality_grade": "Epoxy Based",
+          "unit": "per liter",
+          "market_price_pkr": 1110,
+          "final_price_pkr": 1110,
+          "discount_pct": 0,
+          "availability": "Readily Available",
+          "lead_time": "1-3 days",
+          "warranty": "As per manufacturer",
+          "supplier": "Shah Brothers Merchants",
+          "recommendation_score": 38.9,
+          "score_breakdown": {
+            "cosine": 0.2201,
+            "rec_score_norm": 0.98,
+            "quality_match": 0,
+            "city_match": 1
+          }
+        }
+      ]
+    },
+    "total_estimated_cost": null
+  }
+]

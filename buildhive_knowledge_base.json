@@ -1,0 +1,458 @@
+[
+  {
+    "category": "General Platform",
+    "question": "What is BuildHive?",
+    "answer": "BuildHive is an AI-powered construction marketplace that connects buyers (people building homes or commercial structures), sellers (suppliers of construction materials), and freelancers or service providers (contractors, plumbers, electricians, etc.). It combines a traditional marketplace with AI tools like a material recommendation system, a cost estimation engine, and a chatbot assistant to simplify the entire construction procurement process.",
+    "tags": ["buildhive", "overview", "platform", "introduction"]
+  },
+  {
+    "category": "General Platform",
+    "question": "How does BuildHive work?",
+    "answer": "BuildHive operates as a three-sided marketplace. Buyers browse or search for construction materials and services, place orders, and use AI tools to plan their projects. Sellers list their products and manage inventory through a seller dashboard. Freelancers register their services and receive booking requests from buyers. The AI layer powers recommendations, cost estimates, and a chatbot to assist all users throughout the process.",
+    "tags": ["how it works", "overview", "marketplace", "three-sided"]
+  },
+  {
+    "category": "General Platform",
+    "question": "Who can use BuildHive?",
+    "answer": "BuildHive is designed for three types of users: Buyers who need construction materials or services for their projects, Sellers who want to supply construction materials to buyers, and Freelancers or Service Providers such as contractors, plumbers, and electricians who want to offer their services. Each role has a dedicated dashboard and feature set tailored to their needs.",
+    "tags": ["users", "roles", "buyers", "sellers", "freelancers"]
+  },
+  {
+    "category": "General Platform",
+    "question": "What are the main features of BuildHive?",
+    "answer": "BuildHive offers a digital asset marketplace for buying and selling construction materials, a service provider marketplace for hiring contractors and tradespeople, an AI-powered material recommendation system, an AI-based cost estimation tool, a chatbot assistant, secure payment processing, real-time messaging between users, a review and rating system, and personalized dashboards for each user role.",
+    "tags": ["features", "overview", "AI tools", "marketplace"]
+  },
+  {
+    "category": "General Platform",
+    "question": "Is BuildHive free to use?",
+    "answer": "Creating an account on BuildHive is free for buyers and freelancers. Sellers may be subject to listing fees or commission on sales depending on the plan they choose. Some AI features like the cost estimator and recommendation engine are accessible to registered users. Refer to the pricing section of the platform for the latest fee structure.",
+    "tags": ["pricing", "free", "fees", "account"]
+  },
+  {
+    "category": "General Platform",
+    "question": "What makes BuildHive different from a regular construction supplier website?",
+    "answer": "Unlike a standard supplier website, BuildHive integrates AI directly into the buying experience. The AI recommendation system suggests materials based on your project description. The cost estimator gives a breakdown before you commit to a purchase. The chatbot guides you through the entire process. Additionally, BuildHive combines both product sellers and service freelancers in one platform, eliminating the need to visit multiple websites.",
+    "tags": ["differentiation", "AI", "comparison", "unique features"]
+  },
+  {
+    "category": "General Platform",
+    "question": "In which languages does BuildHive support interaction?",
+    "answer": "BuildHive supports multilingual interaction through its chatbot and platform interface. The chatbot specifically is designed with multilingual support so users can ask questions and receive answers in their preferred language. Check the platform settings for the full list of currently supported languages.",
+    "tags": ["language", "multilingual", "chatbot", "localization"]
+  },
+  {
+    "category": "User Accounts & Roles",
+    "question": "How do I create an account on BuildHive?",
+    "answer": "To create an account, visit the BuildHive registration page and fill in the required information such as your name, email address, and password. You will also agree to the platform's terms of service during signup. After submitting the form, a confirmation email will be sent to verify your email address. Once confirmed, your account is active and you can select your role.",
+    "tags": ["registration", "signup", "account creation", "onboarding"]
+  },
+  {
+    "category": "User Accounts & Roles",
+    "question": "How do I verify my email after signing up?",
+    "answer": "After registration, BuildHive sends a confirmation email to the address you provided. Open the email and click the verification link. If you do not see the email in your inbox, check your spam or junk folder. The link typically expires after 24 hours, after which you can request a new verification email from the login page.",
+    "tags": ["email verification", "confirmation", "signup", "account"]
+  },
+  {
+    "category": "User Accounts & Roles",
+    "question": "What roles can I choose when registering on BuildHive?",
+    "answer": "During registration, BuildHive lets you select one of three roles: Buyer, Seller, or Freelancer. Buyers can browse and purchase materials and book services. Sellers can list and sell construction materials. Freelancers can register and offer construction-related services such as plumbing, electrical work, or general contracting. Your role determines which features and dashboards are available to you.",
+    "tags": ["roles", "buyer", "seller", "freelancer", "registration"]
+  },
+  {
+    "category": "User Accounts & Roles",
+    "question": "Can I change my role after registering?",
+    "answer": "BuildHive allows users to manage their profile, but changing your primary role after registration may require contacting support or going through a role-upgrade process depending on platform policies. In some cases, you may be able to have multiple roles by managing separate accounts or requesting a role addition from your profile settings.",
+    "tags": ["role change", "account management", "profile", "update"]
+  },
+  {
+    "category": "User Accounts & Roles",
+    "question": "How do I reset my password on BuildHive?",
+    "answer": "On the login page, click 'Forgot Password' and enter your registered email address. BuildHive will send a password reset link to your email. Click the link, enter your new password, and confirm it. The link expires after a short period, so use it promptly. If you do not receive the email, check your spam folder or request a new link.",
+    "tags": ["password reset", "forgotten password", "login", "security"]
+  },
+  {
+    "category": "User Accounts & Roles",
+    "question": "How do I update my profile information on BuildHive?",
+    "answer": "Log in and go to your profile or account settings section. From there, you can view and edit personal details such as your name, phone number, location, and profile picture. Sellers and freelancers can also update their business information, portfolio, and service descriptions from the same section. Changes are saved immediately after you submit the form.",
+    "tags": ["profile", "account settings", "update", "edit"]
+  },
+  {
+    "category": "User Accounts & Roles",
+    "question": "What is the difference between a Buyer, Seller, and Freelancer account?",
+    "answer": "A Buyer account is for individuals or companies that want to purchase construction materials and hire service providers. A Seller account is for businesses or individuals supplying materials such as cement, bricks, or tiles. A Freelancer account is for skilled tradespeople and contractors offering services like plumbing, electrical installations, or construction work. Each account type has a unique dashboard, permissions, and features aligned with that role's needs.",
+    "tags": ["buyer vs seller", "roles comparison", "freelancer", "account types"]
+  },
+  {
+    "category": "User Accounts & Roles",
+    "question": "How is my data and account protected on BuildHive?",
+    "answer": "BuildHive uses secure login mechanisms including encrypted password storage and optional two-factor authentication. Email verification ensures account authenticity. All AI-related data is handled with privacy compliance as per the platform's data security policies. Financial transactions use integrated secure payment gateways to protect sensitive payment information.",
+    "tags": ["security", "data protection", "privacy", "account safety"]
+  },
+  {
+    "category": "Buyer Module",
+    "question": "How do I search for construction materials on BuildHive?",
+    "answer": "Use the main search bar at the top of the marketplace and type keywords such as 'cement', 'ceramic tiles', or 'steel rods'. You can also browse by category to discover materials organized by type. After a search, apply filters like price range, brand, location, or rating to narrow down results. You can sort results by relevance, newest, or top-rated.",
+    "tags": ["search", "materials", "buyer", "browse"]
+  },
+  {
+    "category": "Buyer Module",
+    "question": "How do I place an order for materials on BuildHive?",
+    "answer": "Find the material you need through search or category browsing, open the product listing page to review details, and click the purchase or order button. Select the quantity and confirm your delivery address and payment method. Once you complete checkout, you will receive a confirmation notification and the order will appear in your buyer dashboard under active orders.",
+    "tags": ["order", "purchase", "buying", "checkout"]
+  },
+  {
+    "category": "Buyer Module",
+    "question": "How do I track my order after placing it?",
+    "answer": "Log in and go to your Buyer Dashboard. Under the Active Orders section, you can see the current status of all ongoing purchases, including pending payment, confirmed, dispatched, and delivered stages. Notifications are sent at each key stage. You can also communicate with the seller directly through the messaging feature if you need an update.",
+    "tags": ["order tracking", "active orders", "buyer dashboard", "delivery"]
+  },
+  {
+    "category": "Buyer Module",
+    "question": "Can I save items to a wishlist on BuildHive?",
+    "answer": "Yes. On any product listing page, you can mark items as favorites or add them to a wishlist. These saved items are visible in your Buyer Dashboard under the Saved Items section. This is useful when you are still planning your project and want to compare prices or revisit specific materials later before making a purchase.",
+    "tags": ["wishlist", "saved items", "favorites", "buyer"]
+  },
+  {
+    "category": "Buyer Module",
+    "question": "Where can I see my purchase history on BuildHive?",
+    "answer": "Go to your Buyer Dashboard and click on Purchase History. This section lists all previously completed purchases with details including the item name, seller name, purchase date, and amount paid. You can also access receipts and invoices from the Financial Overview section of your dashboard.",
+    "tags": ["purchase history", "order history", "buyer dashboard", "receipts"]
+  },
+  {
+    "category": "Buyer Module",
+    "question": "Can I post a project requirement and receive proposals from freelancers?",
+    "answer": "Yes. As a buyer, you can post a project brief describing the work you need done — for example, tiling a 200 sqft bathroom or installing electrical wiring for a 3-bedroom house. Freelancers who are registered on the platform can view your post and submit formal proposals with their pricing and timelines. You can review these proposals and select the one that best fits your needs.",
+    "tags": ["project posting", "proposals", "freelancers", "buyer"]
+  },
+  {
+    "category": "Buyer Module",
+    "question": "How do I use the AI recommendation system as a buyer?",
+    "answer": "From your dashboard or the AI tools section, click on the Material Recommendation tool. Enter a description of your project — such as the type of construction, area in square feet, and specific needs. The AI analyzes your inputs and returns a ranked list of recommended materials with explanations for each recommendation. You can save these results and even add recommended items directly to your order.",
+    "tags": ["AI recommendations", "buyer", "materials", "project planning"]
+  },
+  {
+    "category": "Buyer Module",
+    "question": "How do I use the cost estimator as a buyer?",
+    "answer": "Open the Cost Estimation tool from your dashboard or the AI tools menu. Enter your project details such as total area, type of rooms, preferred materials, and any budget limits. The system generates a detailed cost breakdown itemized by components such as labor, materials, and finishing. You can compare different variations and save or export the estimate for future reference or sharing with a contractor.",
+    "tags": ["cost estimator", "budget", "planning", "buyer"]
+  },
+  {
+    "category": "Buyer Module",
+    "question": "Can I negotiate prices with sellers on BuildHive?",
+    "answer": "BuildHive does not have a built-in bidding system for standard material listings, but buyers can contact sellers directly via the private messaging feature to discuss bulk pricing or special requirements. For freelance services, buyers can review proposals and discuss scope and pricing with service providers before confirming a project.",
+    "tags": ["negotiation", "pricing", "messaging", "buyer-seller"]
+  },
+  {
+    "category": "Seller Module",
+    "question": "How do I register as a seller on BuildHive?",
+    "answer": "During account registration, select 'Seller' as your role. You will be prompted to provide business-related details such as your business name, location, and contact information. After your email is verified and your seller profile is set up, you can start creating product listings from your Seller Dashboard.",
+    "tags": ["seller registration", "signup", "seller account", "onboarding"]
+  },
+  {
+    "category": "Seller Module",
+    "question": "How do I list a new product for sale on BuildHive?",
+    "answer": "Log into your Seller Dashboard and click on 'New Listing' or 'Add Product'. Fill in the required details including product name, category, description, price, available quantity, and upload product images. You can save the listing as a draft to review it later or publish it immediately to make it live on the marketplace. All listings must comply with platform guidelines.",
+    "tags": ["product listing", "add product", "seller", "marketplace"]
+  },
+  {
+    "category": "Seller Module",
+    "question": "Can I save a product listing as a draft before publishing?",
+    "answer": "Yes. BuildHive allows sellers to save their product listings as drafts at any stage of the creation process. This is useful if you need to gather more product information or photos before going live. You can return to the Seller Dashboard, find the draft under your listings, make edits, and then publish it whenever you are ready.",
+    "tags": ["draft listing", "save", "seller", "publish"]
+  },
+  {
+    "category": "Seller Module",
+    "question": "How do I modify a published listing on BuildHive?",
+    "answer": "Go to your Seller Dashboard and navigate to the Listing Management section. Find the listing you want to update, click Edit, and make the necessary changes to price, description, stock quantity, or images. Once saved, the updated information will reflect on the marketplace immediately. You can also update both published and drafted listings.",
+    "tags": ["edit listing", "modify product", "seller", "update"]
+  },
+  {
+    "category": "Seller Module",
+    "question": "How do I remove or unpublish a listing?",
+    "answer": "In your Seller Dashboard under Listing Management, select the listing you want to remove. You have two options: permanently delete the listing, which removes it from the platform entirely, or unpublish it temporarily, which hides it from buyers but retains the data for future use. Unpublishing is recommended if you plan to restock or re-list the item later.",
+    "tags": ["remove listing", "unpublish", "delete", "seller"]
+  },
+  {
+    "category": "Seller Module",
+    "question": "How do I manage my inventory on BuildHive?",
+    "answer": "The Seller Dashboard includes a Listing Management interface where you can monitor stock quantities for all your listed products. When stock is running low, update the available quantity directly from the listing edit page. BuildHive may also send alerts when stock reaches a threshold. Keeping inventory updated ensures buyers are not able to order out-of-stock items.",
+    "tags": ["inventory", "stock", "seller dashboard", "management"]
+  },
+  {
+    "category": "Seller Module",
+    "question": "Can I offer subscription-based services as a seller?",
+    "answer": "Yes. BuildHive supports flexible selling models for sellers. You can offer products as a one-time purchase or set up monthly subscription or usage-based plans for ongoing material needs. This is particularly useful for buyers who require regular supply of consumables like paint, sand, or fasteners. Configure the plan details in the listing creation form.",
+    "tags": ["subscription", "SaaS", "recurring", "seller plans"]
+  },
+  {
+    "category": "Seller Module",
+    "question": "Where can I see my sales performance data as a seller?",
+    "answer": "Your Seller Dashboard includes a Sales Insights section that displays visual charts and data on revenue trends, total units sold, and top-performing listings. The Performance Analytics section gives deeper metrics such as average ratings and repeat buyer rates. You can use this data to adjust pricing strategies, update slow-moving listings, or identify your best-selling products.",
+    "tags": ["sales analytics", "performance", "revenue", "seller dashboard"]
+  },
+  {
+    "category": "Seller Module",
+    "question": "How do I respond to buyer reviews and questions on my listings?",
+    "answer": "In your Seller Dashboard under Customer Interactions, you can see recent buyer reviews and questions related to your listings. Click on any review or question to open a response form. Your response will be published publicly on the product detail page. Promptly engaging with feedback and questions improves your seller reputation and buyer trust.",
+    "tags": ["reviews", "Q&A", "seller response", "customer interaction"]
+  },
+  {
+    "category": "Seller Module",
+    "question": "What happens if my listing is flagged or rejected by the admin?",
+    "answer": "If your listing violates platform guidelines, the admin may reject it or flag it for revision. A compliance notice will appear in your Seller Dashboard under Compliance Notices with details about the reason and the required corrections. Update your listing according to the feedback and resubmit for review. Continued violations can lead to account suspension.",
+    "tags": ["listing rejection", "compliance", "admin moderation", "seller"]
+  },
+  {
+    "category": "Seller Module",
+    "question": "How do I set my pricing strategy on BuildHive?",
+    "answer": "BuildHive gives sellers full control over product pricing. You can set a fixed price per unit, offer bulk discounts by creating tiered pricing options, or configure subscription rates for recurring supply agreements. Review your competitors' pricing by browsing similar listings and use your Sales Insights dashboard to identify price points that maximize conversions without sacrificing margin.",
+    "tags": ["pricing", "strategy", "seller", "discounts"]
+  },
+  {
+    "category": "Freelancer / Service Provider",
+    "question": "How do I register as a freelancer or service provider on BuildHive?",
+    "answer": "During the account registration process, select the 'Freelancer' role. You will be guided to set up a dedicated service provider profile where you can describe your skills, experience, service areas, and upload samples of past work. After your profile is complete and your email is verified, you can create service listings and start receiving project inquiries from buyers.",
+    "tags": ["freelancer registration", "service provider", "signup", "onboarding"]
+  },
+  {
+    "category": "Freelancer / Service Provider",
+    "question": "What types of services can I offer on BuildHive?",
+    "answer": "BuildHive's service marketplace caters to all construction-related services. Common service categories include general contracting, bricklaying, plastering, roofing, plumbing installation and repair, electrical wiring and fittings, tiling and flooring, painting, carpentry, and interior finishing. If your trade falls within the construction domain, you can list it as a service on the platform.",
+    "tags": ["service types", "plumbing", "electrical", "contracting", "freelancer"]
+  },
+  {
+    "category": "Freelancer / Service Provider",
+    "question": "How do I create a service listing as a freelancer?",
+    "answer": "From your Freelancer Dashboard, click on 'Create Service Listing'. Define the scope of the service, describe what is included in the deliverables, set your pricing model (fixed, hourly, or milestone-based), and specify your service area. You can also attach portfolio samples to strengthen your listing. Once submitted, the listing goes through admin review before becoming visible to buyers.",
+    "tags": ["service listing", "create", "freelancer", "pricing"]
+  },
+  {
+    "category": "Freelancer / Service Provider",
+    "question": "How does the booking or project assignment system work for freelancers?",
+    "answer": "Buyers can post a project requirement with details about the work needed, location, and budget. Freelancers who match the requirement can submit proposals with their pricing and estimated timeline. Alternatively, buyers may directly contact a freelancer whose profile they found through search. Once a proposal is accepted, both parties receive a notification and can proceed to discuss project milestones and finalize terms via the messaging system.",
+    "tags": ["booking", "proposals", "project assignment", "freelancer"]
+  },
+  {
+    "category": "Freelancer / Service Provider",
+    "question": "How do I submit a proposal for a buyer's project on BuildHive?",
+    "answer": "Browse open project postings from buyers in the marketplace or through the freelancer discovery section. Open a project that matches your skills and click 'Submit Proposal'. Fill in your proposed cost, estimated duration, and a description of your approach. You can also attach any relevant portfolio documents. Once submitted, the buyer will review your proposal alongside others and may reach out via messaging for further discussion.",
+    "tags": ["proposal", "bid", "freelancer", "project"]
+  },
+  {
+    "category": "Freelancer / Service Provider",
+    "question": "How are milestones used for freelance projects?",
+    "answer": "When a project is accepted, it can be broken down into milestones — measurable stages with defined deliverables and payment amounts. For example, a construction project might have milestones for foundation, roofing, and finishing. Both the buyer and freelancer agree on these milestones before work starts. Payments are released progressively as each milestone is completed, protecting both parties.",
+    "tags": ["milestones", "project stages", "payments", "freelancer"]
+  },
+  {
+    "category": "Freelancer / Service Provider",
+    "question": "Can I upload my past work portfolio to my freelancer profile?",
+    "answer": "Yes. BuildHive allows freelancers to upload images, documents, and other work samples to their profile as a portfolio. A strong portfolio significantly increases your chances of winning project proposals because buyers can directly evaluate the quality of your previous work. Navigate to your profile settings and find the Portfolio Upload section to add or update your samples.",
+    "tags": ["portfolio", "work samples", "profile", "freelancer"]
+  },
+  {
+    "category": "Freelancer / Service Provider",
+    "question": "How does a buyer communicate with me after hiring my service?",
+    "answer": "Once a project is accepted, both the buyer and freelancer can communicate through BuildHive's private messaging system. This allows real-time text conversations, sharing of files or images, and keeping all project-related communication in one place. The system also supports read receipts and media preview so both parties stay aligned throughout the project.",
+    "tags": ["communication", "messaging", "buyer-freelancer", "project"]
+  },
+  {
+    "category": "Freelancer / Service Provider",
+    "question": "How do buyers rate freelancers after a project?",
+    "answer": "After a project is marked complete, the buyer is prompted to submit a review. They can assign a star rating from 1 to 5 and write a detailed written review describing their experience. These reviews are displayed publicly on your freelancer profile and play a key role in attracting future clients. You as the service provider can also respond to reviews publicly.",
+    "tags": ["rating", "reviews", "freelancer reputation", "client review"]
+  },
+  {
+    "category": "Marketplace System",
+    "question": "What product categories are available on BuildHive?",
+    "answer": "BuildHive's marketplace covers a wide range of construction material categories including cement and concrete products, bricks and blocks, sand and aggregates, steel and metal products, tiles and flooring, sanitary ware and plumbing fittings, paints and coatings, wood and lumber, roofing materials, electrical components, insulation materials, and adhesives and sealants. Categories are continuously updated as new sellers join the platform.",
+    "tags": ["categories", "materials", "cement", "tiles", "bricks", "marketplace"]
+  },
+  {
+    "category": "Marketplace System",
+    "question": "How does the search and filtering system work on BuildHive?",
+    "answer": "The primary search bar allows you to search using keywords such as product name, brand, or material type. After searching, you can apply granular filters based on attributes like price range, seller rating, product category, location of seller, and availability. You can also sort results by relevance, newest listings, or top-rated products. Tag-based discovery lets you click on a product tag to find similar items instantly.",
+    "tags": ["search", "filters", "discovery", "marketplace"]
+  },
+  {
+    "category": "Marketplace System",
+    "question": "How do I leave a review for a product I purchased?",
+    "answer": "After successfully purchasing and receiving a product, go to your Purchase History in the Buyer Dashboard and find the relevant order. Click on 'Leave a Review', assign a star rating from 1 to 5, and write your feedback. A verified purchase badge will automatically appear next to your review to indicate that your review is from an actual buyer.",
+    "tags": ["review", "rating", "product feedback", "buyer"]
+  },
+  {
+    "category": "Marketplace System",
+    "question": "What does the order lifecycle look like on BuildHive?",
+    "answer": "An order on BuildHive goes through several stages: the buyer places an order and makes payment, the order status changes to confirmed, the seller processes and dispatches the item, the order is marked as shipped with tracking information, the buyer receives the item and the order is marked as delivered. If a dispute arises, it enters a resolution stage managed by admin. Throughout the cycle, both parties receive notifications at each transition.",
+    "tags": ["order lifecycle", "order status", "delivery", "marketplace"]
+  },
+  {
+    "category": "Marketplace System",
+    "question": "Can I ask the seller a question about a product before buying?",
+    "answer": "Yes. Each product listing page has a dedicated Public Q&A section where buyers can post questions directly on the listing. The seller receives a notification and can respond publicly, which benefits all buyers who have the same question. For more private inquiries, you can also initiate a private message with the seller through the messaging feature.",
+    "tags": ["Q&A", "product questions", "pre-purchase", "buyer-seller"]
+  },
+  {
+    "category": "Marketplace System",
+    "question": "How do I find featured or popular products on BuildHive?",
+    "answer": "The marketplace homepage and category landing pages display a dedicated featured section that highlights popular listings, newly added products, and top-rated sellers. You can also sort any search result by 'Top Rated' or 'Newest' to surface the most relevant listings. The platform curates these highlights based on sales volume, reviews, and engagement metrics.",
+    "tags": ["featured products", "popular", "discovery", "homepage"]
+  },
+  {
+    "category": "Marketplace System",
+    "question": "Can I see the update history of a product listing?",
+    "answer": "Yes. Each product detail page includes an Update Timeline that shows a log of changes made to the listing by the seller — such as price changes, description updates, or new images. This transparency helps buyers understand the listing's history and make more informed purchasing decisions.",
+    "tags": ["update timeline", "listing history", "product details", "transparency"]
+  },
+  {
+    "category": "Marketplace System",
+    "question": "What happens if I report an inappropriate review?",
+    "answer": "BuildHive provides a content reporting mechanism on each review. Click the report or flag icon next to the review in question and select the reason such as offensive language, fake review, or irrelevant content. The admin team will be notified and will review the flagged content. Depending on the investigation, the review may be edited, removed, or left unchanged with a note.",
+    "tags": ["report review", "flag content", "moderation", "reviews"]
+  },
+  {
+    "category": "AI Recommendation System",
+    "question": "How does the BuildHive AI material recommendation system work?",
+    "answer": "The recommendation system uses an embedding-based similarity model. When you describe your project — for example, 'I am building a 2000 sqft single-story house and need materials for the foundation and exterior walls' — the system converts your input into a vector representation and compares it against embedded representations of all available materials in the catalog. The most semantically similar and contextually appropriate materials are ranked and returned as recommendations.",
+    "tags": ["AI recommendation", "embeddings", "how it works", "NLP"]
+  },
+  {
+    "category": "AI Recommendation System",
+    "question": "What information do I need to provide to get material recommendations?",
+    "answer": "To get useful recommendations, provide as much detail as possible about your project. Useful inputs include the type of structure (residential, commercial, industrial), the total floor area in square feet or square meters, the stage of construction (foundation, structure, finishing), specific requirements like water resistance or heat insulation, and your estimated budget. The more context you provide, the more accurate and relevant the recommendations will be.",
+    "tags": ["recommendation inputs", "AI", "project details", "buyer"]
+  },
+  {
+    "category": "AI Recommendation System",
+    "question": "Can I save the results from the AI recommendation system?",
+    "answer": "Yes. After the recommendation system generates a list of suggested materials, you can click Save to store both the input parameters and the results for future reference. Saved recommendations are accessible from your Buyer Dashboard and can be revisited at any time. This is useful when you are planning a project over multiple sessions.",
+    "tags": ["save recommendations", "AI results", "buyer dashboard", "planning"]
+  },
+  {
+    "category": "AI Recommendation System",
+    "question": "What if the recommended materials don't match what I need?",
+    "answer": "BuildHive's recommendation system supports variation suggestions. If the initial results do not meet your requirements, you can refine your input description or use the 'Show Variations' option to see alternative materials that could serve similar purposes. You can also rate the relevance of each recommendation through the feedback loop feature, which helps improve future results.",
+    "tags": ["recommendations not matching", "variations", "feedback", "AI"]
+  },
+  {
+    "category": "AI Recommendation System",
+    "question": "Does the AI explain why it recommended a particular material?",
+    "answer": "Yes. For each recommended material, the system provides a Recommendation Explanation — a brief rationale describing why it is a good fit for your stated requirements. For example, it might note that a specific grade of cement is recommended because of its suitability for high-humidity environments, which matches your project's location description. This transparency helps you make informed decisions.",
+    "tags": ["recommendation explanation", "AI reasoning", "transparency", "materials"]
+  },
+  {
+    "category": "Cost Estimation System",
+    "question": "How does the BuildHive cost estimation system work?",
+    "answer": "The Cost Estimation tool accepts detailed project specifications from the user — such as total area, number of floors, room types, and preferred material grades — and processes them through a cost modeling engine. It outputs a comprehensive estimate broken down by components including materials, labor, and finishing. The system references current market rates from the platform's marketplace to generate realistic figures.",
+    "tags": ["cost estimation", "how it works", "AI", "construction budget"]
+  },
+  {
+    "category": "Cost Estimation System",
+    "question": "What inputs does the cost estimator require?",
+    "answer": "To use the cost estimator, you need to provide your project's total area (in square feet or square meters), the type and number of rooms, the number of floors, your material quality preferences (economy, standard, or premium), labor requirements, and any specific features such as a swimming pool, basement, or special flooring. You can also enter a maximum budget constraint to help the system tailor the estimate.",
+    "tags": ["cost estimator inputs", "project specs", "area", "rooms", "budget"]
+  },
+  {
+    "category": "Cost Estimation System",
+    "question": "What does the cost estimate output look like?",
+    "answer": "The output is an itemized cost breakdown that separates costs by major components. For example, you might see individual estimates for structural materials, roofing, flooring, sanitary fittings, electrical work, painting, and labor. A grand total is displayed along with cost-per-square-foot metrics. This makes it easy to identify which areas consume the most budget.",
+    "tags": ["cost breakdown", "estimate output", "itemized", "budget planning"]
+  },
+  {
+    "category": "Cost Estimation System",
+    "question": "Can I compare different cost scenarios in the estimator?",
+    "answer": "Yes. The Variation Comparison feature in the Cost Estimation tool lets you create multiple project variations and compare their costs side by side. For instance, you can compare a standard finish versus a premium finish, or compare the cost of using local bricks versus imported tiles. This helps you make budget-conscious decisions without having to run separate estimations.",
+    "tags": ["variation comparison", "cost scenarios", "budget options", "estimator"]
+  },
+  {
+    "category": "Cost Estimation System",
+    "question": "Does the estimator suggest ways to reduce costs?",
+    "answer": "Yes. After generating an estimate, the system provides Cost Reduction Suggestions. These may include recommendations to substitute a premium material with an equally effective lower-cost alternative, use a different service provider tier, or adjust project scope to stay within budget. The suggestions are contextual and come with brief explanations of the trade-offs involved.",
+    "tags": ["cost reduction", "savings suggestions", "budget optimization", "estimator"]
+  },
+  {
+    "category": "Cost Estimation System",
+    "question": "Can I save or export my cost estimate?",
+    "answer": "Yes. After generating an estimate, you can save it to your account for later viewing in your Buyer Dashboard. You can also export the estimate in a printable or shareable format — typically PDF — which you can share with contractors, architects, or family members for review. Saved estimates can be updated as project requirements change.",
+    "tags": ["save estimate", "export", "PDF", "share", "estimator"]
+  },
+  {
+    "category": "Cost Estimation System",
+    "question": "How accurate is the BuildHive cost estimator?",
+    "answer": "The cost estimator provides indicative estimates based on current marketplace pricing and standard construction rates. Actual costs may vary due to regional labor rates, supplier availability, design complexity, and site conditions. The tool is designed to help with budgeting and planning, not to replace a formal quantity survey or professional engineering estimate. For critical projects, always consult a certified quantity surveyor.",
+    "tags": ["accuracy", "cost estimator", "limitations", "planning tool"]
+  },
+  {
+    "category": "Chatbot System",
+    "question": "What can the BuildHive chatbot help me with?",
+    "answer": "The BuildHive chatbot is a conversational AI assistant that can answer questions about the platform, guide you to the right listings or features, help you initiate a material recommendation or cost estimation, explain how specific features work, and respond to common FAQs about orders, payments, and accounts. It is available 24/7 and responds in natural language.",
+    "tags": ["chatbot", "assistant", "support", "help"]
+  },
+  {
+    "category": "Chatbot System",
+    "question": "How do I access the BuildHive chatbot?",
+    "answer": "The chatbot is accessible via a chat icon or widget typically found at the bottom-right corner of the platform interface. Click the icon to open the chat window, type your question in natural language, and the chatbot will respond. It is available across all pages of the platform so you do not need to navigate to a specific section to use it.",
+    "tags": ["chatbot access", "chat interface", "how to use", "widget"]
+  },
+  {
+    "category": "Chatbot System",
+    "question": "Can the chatbot trigger the recommendation or estimation tools?",
+    "answer": "Yes. The chatbot has Tool Access capabilities that allow it to initiate basic recommendation queries and cost estimation inputs directly through chat commands. For example, you can type 'I need material recommendations for a 1500 sqft house' and the chatbot will activate the recommendation tool with your input, showing results within the chat or redirecting you to the full tool interface.",
+    "tags": ["chatbot tools", "recommendation", "cost estimation", "commands"]
+  },
+  {
+    "category": "Chatbot System",
+    "question": "Does the chatbot remember my previous interactions?",
+    "answer": "Yes. BuildHive's chatbot is designed with personalization capabilities. It considers your current role, the page you are on, and your interaction history to provide contextually relevant answers. For example, if you are a seller viewing your dashboard, the chatbot will prioritize seller-related answers rather than buyer ones.",
+    "tags": ["chatbot memory", "personalization", "context", "interaction history"]
+  },
+  {
+    "category": "Chatbot System",
+    "question": "What are the limitations of the BuildHive chatbot?",
+    "answer": "The chatbot is built on the platform's knowledge base and is best suited for answering questions about BuildHive's features, policies, and general construction guidance. It cannot process real-time live data like live stock prices or delivery times unless integrated with live systems. For complex disputes, legal issues, or highly specialized construction advice, contacting human support or a certified professional is recommended.",
+    "tags": ["chatbot limitations", "support", "escalation", "FAQ"]
+  },
+  {
+    "category": "Chatbot System",
+    "question": "Can I rate the chatbot's response?",
+    "answer": "Yes. After each chatbot reply, you can quickly rate the response using a thumbs up or thumbs down button. This feedback is collected to improve the chatbot's knowledge base and response quality over time. If a response is unhelpful, marking it negatively helps the system learn and prioritize better answers for that query type.",
+    "tags": ["chatbot rating", "feedback", "response quality", "improvement"]
+  },
+  {
+    "category": "Chatbot System",
+    "question": "Can I interact with the chatbot in my local language?",
+    "answer": "Yes. BuildHive's chatbot supports multilingual interaction. You can type your question in your preferred supported language and the chatbot will respond in the same language. This is especially useful for users who are more comfortable communicating in a language other than English. The full list of supported languages is available in the platform's settings or help center.",
+    "tags": ["multilingual chatbot", "language support", "local language", "accessibility"]
+  },
+  {
+    "category": "Payments & Transactions",
+    "question": "What payment methods are supported on BuildHive?",
+    "answer": "BuildHive integrates with secure payment gateways to support a variety of payment methods. Commonly supported options include credit and debit cards, bank transfers, and digital wallets. The available methods may vary by country or region. During checkout, you will see the payment options relevant to your location and account settings.",
+    "tags": ["payment methods", "checkout", "credit card", "digital wallet"]
+  },
+  {
+    "category": "Payments & Transactions",
+    "question": "How secure are payments on BuildHive?",
+    "answer": "All financial transactions on BuildHive are processed through integrated, industry-standard payment gateways that use encryption and secure tokenization to protect your payment details. BuildHive does not store raw card data on its servers. Payments for freelance projects are additionally protected by the milestone-based release system, which ensures funds are only released upon verified completion.",
+    "tags": ["payment security", "encryption", "secure transactions", "gateway"]
+  },
+  {
+    "category": "Payments & Transactions",
+    "question": "How do refunds work on BuildHive?",
+    "answer": "If you have an issue with a purchase — such as receiving a damaged item or a service not delivered as agreed — you can initiate a dispute from your order details page. The admin team will review the case and, if the claim is validated, a refund will be processed back to your original payment method. Refund timelines depend on your bank or payment provider but typically take 3–7 business days.",
+    "tags": ["refunds", "disputes", "return", "buyer protection"]
+  },
+  {
+    "category": "Payments & Transactions",
+    "question": "How does payment work for freelance projects with milestones?",
+    "answer": "For milestone-based freelance projects, the payment is not released all at once. The buyer and freelancer agree on milestones before work begins. When the freelancer completes a milestone and the buyer approves it, the corresponding payment for that milestone is released. This protects buyers from non-delivery and ensures freelancers are fairly compensated for completed work.",
+    "tags": ["milestone payments", "freelancer", "escrow-like", "payment flow"]
+  },
+  {
+    "category": "Payments & Transactions",
+    "question": "Can I view my transaction history and invoices?",
+    "answer": "Yes. Go to your Buyer Dashboard and navigate to Financial Overview. Here you can access a full list of past transactions, receipts, and downloadable invoices. Sellers can also view their payout history and earnings through the financial section of their Seller Dashboard. Admin users can access a comprehensive financial oversight view with aggregated transaction data.",
+    "tags": ["transaction history", "invoices", "receipts", "financial overview"]
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "_comment": "Plot footprint (single-floor covered sqft). Caps are typical planning norms — tune with stakeholders. First matching band where plot_sqft <= max_plot_sqft applies.",
+  "bands": [
+    { "max_plot_sqft": 225, "max_bed": 1, "max_bath": 1, "max_kitchen": 1 },
+    { "max_plot_sqft": 450, "max_bed": 2, "max_bath": 2, "max_kitchen": 1 },
+    { "max_plot_sqft": 675, "max_bed": 3, "max_bath": 3, "max_kitchen": 2 },
+    { "max_plot_sqft": 1125, "max_bed": 4, "max_bath": 3, "max_kitchen": 2 },
+    { "max_plot_sqft": 1580, "max_bed": 5, "max_bath": 4, "max_kitchen": 2 },
+    { "max_plot_sqft": 999999, "max_bed": 6, "max_bath": 5, "max_kitchen": 3 }
+  ]
+}

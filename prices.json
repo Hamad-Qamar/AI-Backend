@@ -1,0 +1,96 @@
+{
+    "last_updated": "2026-04-26",
+    "items": {
+        "cement_bag": {
+            "unit": "50kg bag",
+            "economy": 1305,
+            "standard": 1305,
+            "premium": 1304,
+            "luxury": 1305
+        },
+        "cement_bag_ppc": {
+            "unit": "50kg bag",
+            "economy": 1221,
+            "standard": 1218,
+            "premium": 1224,
+            "luxury": 1221
+        },
+        "brick": {
+            "unit": "1000 bricks",
+            "economy": 20894,
+            "standard": 20894,
+            "premium": 20894,
+            "luxury": 20894
+        },
+        "sand_cft": {
+            "unit": "100 cft (one trolley)",
+            "economy": 13237,
+            "standard": 13237,
+            "premium": 13237,
+            "luxury": 13237
+        },
+        "sand_cft_fine": {
+            "unit": "100 cft (one trolley)",
+            "economy": 15403,
+            "standard": 15403,
+            "premium": 15403,
+            "luxury": 15403
+        },
+        "steel_kg": {
+            "unit": "per kg",
+            "economy": 316,
+            "standard": 316,
+            "premium": 316,
+            "luxury": 316
+        },
+        "wood_cft": {
+            "unit": "per frame (set)",
+            "economy": 7563,
+            "standard": 7563,
+            "premium": 7563,
+            "luxury": 7563
+        },
+        "gravel_cft": {
+            "unit": "100 cft (one trolley)",
+            "economy": 9500,
+            "standard": 11000,
+            "premium": 13000,
+            "luxury": 15000
+        },
+        "tiles_sqft": {
+            "unit": "per sqft",
+            "economy": 80,
+            "standard": 130,
+            "premium": 250,
+            "luxury": 450
+        },
+        "paint_liter": {
+            "unit": "per liter",
+            "economy": 600,
+            "standard": 850,
+            "premium": 1300,
+            "luxury": 1800
+        },
+        "labour_sqft": {
+            "unit": "sqft",
+            "economy": 350,
+            "standard": 550,
+            "premium": 850,
+            "luxury": 1200
+        },
+        "plumbing_lumpsum": {
+            "unit": "washroom",
+            "economy": 45000,
+            "standard": 75000,
+            "premium": 120000,
+            "luxury": 250000
+        },
+        "electrical_lumpsum": {
+            "unit": "kitchen",
+            "economy": 35000,
+            "standard": 60000,
+            "premium": 110000,
+            "luxury": 220000
+        }
+    }
+}

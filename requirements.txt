@@ -1,0 +1,12 @@
+faiss-cpu
+sentence-transformers
+fastapi
+uvicorn
+pandas
+numpy
+scipy
+requests
+python-dotenv
+transformers
+pytest
+supabase

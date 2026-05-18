@@ -1,0 +1,14 @@
+.git
+.cursor
+.cache
+**/.cache
+__pycache__
+**/__pycache__
+*.py[cod]
+.venv
+buildhive_ai
+.env
+.env.*
+*.md
+pytest.ini
+tests

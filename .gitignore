@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Tests / tooling
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments (never commit — use requirements.txt)
+.venv/
+venv/
+env/
+buildhive_ai/
+
+# Environment secrets
+.env
+.env.*
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+.DS_Store

@@ -1,0 +1,13 @@
+{
+  "_comment": "Per-floor index multipliers vs equal-floor baseline. Ground (0) carries foundation + heavier shell; upper floors lighter. structural_blend = mean(mult[0..floors-1]). Foundation-only phases use mult[0] only.",
+  "floor_index_multipliers": [1.08, 0.95, 0.92],
+  "upper_floor_default_multiplier": 0.92,
+  "foundation_phases": [
+    "Site Preparation",
+    "Excavation & Foundation"
+  ],
+  "structural_per_floor_phases": [
+    "Grey Structure",
+    "Masonry & Walls"
+  ]
+}
