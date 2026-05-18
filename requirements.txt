@@ -1,3 +1,7 @@
+# CPU-only PyTorch (~200MB vs ~1.5GB CUDA) — required for Railway/Render CPU hosts
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1+cpu
+
 faiss-cpu
 sentence-transformers
 fastapi

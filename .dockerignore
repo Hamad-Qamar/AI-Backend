@@ -5,10 +5,12 @@
 __pycache__
 **/__pycache__
 *.py[cod]
+*.pyc
 .venv
 buildhive_ai
 .env
 .env.*
+node_modules
 *.md
 pytest.ini
 tests

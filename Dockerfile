@@ -19,6 +19,7 @@ COPY scripts/prefetch_embedding_model.py scripts/prefetch_embedding_model.py
 ARG HF_TOKEN=""
 ENV HF_TOKEN=${HF_TOKEN}
 
+# Bake HF weights before app COPY so code changes do not invalidate this layer.
 # Hub during image build (runtime may block huggingface.co). Optional HF_TOKEN for rate limits.
 RUN python scripts/prefetch_embedding_model.py
 
@@ -26,6 +27,7 @@ RUN python scripts/prefetch_embedding_model.py
 ENV HF_HUB_OFFLINE=1 \
     TRANSFORMERS_OFFLINE=1
 
+# App code last — keeps pip + model layers cached across deploys.
 COPY . .
 
 EXPOSE 8080
