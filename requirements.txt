@@ -3,7 +3,9 @@
 torch==2.5.1+cpu
 
 faiss-cpu
-sentence-transformers
+# Pin: latest transformers imports torch.float8_e8m0fnu (needs torch>=2.8); we use 2.5.1+cpu.
+sentence-transformers==3.3.1
+transformers==4.46.3
 fastapi
 uvicorn
 pandas
@@ -11,6 +13,5 @@ numpy
 scipy
 requests
 python-dotenv
-transformers
 pytest
 supabase
