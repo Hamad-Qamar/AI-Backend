@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildHive AI Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --primary: #8C52FF;
+      --primary-dark: #6B3FD4;
+      --primary-soft: #E0CFFF;
+      --secondary: #00D2FF;
+      --bg: #F4F6FB;
+      --white: #FFFFFF;
+      --card: #FFFFFF;
+      --text: #1A1A2E;
+      --muted: #64748B;
+      --border: #E2E8F0;
+      --success: #10B981;
+      --warning: #F59E0B;
+      --shadow: 0 4px 24px -4px rgba(0,0,0,.08);
+      --gradient: linear-gradient(135deg,#8C52FF 0%,#00D2FF 100%);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+    body{background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+    /* ── NAV ── */
+    nav{background:#ffffffee;backdrop-filter:blur(12px);padding:.9rem 5%;display:flex;
+        justify-content:space-between;align-items:center;gap:1rem;position:sticky;top:0;z-index:1000;
+        box-shadow:0 1px 12px rgba(0,0,0,.06)}
+    .logo{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--text)}
+    .logo-icon{background:var(--primary);color:#fff;padding:.4rem;border-radius:8px;display:flex}
+    .nav-links{display:flex;gap:1.75rem;list-style:none}
+    .nav-links a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.9rem;transition:color .2s}
+    .nav-links a.active,.nav-links a:hover{color:var(--primary)}
+
+    /* ── HERO ── */
+    .hero{background:var(--gradient);padding:3rem 5%;color:#fff;position:relative;overflow:hidden}
+    .hero::after{content:'';position:absolute;inset:0;background:url('https://www.transparenttextures.com/patterns/cubes.png');opacity:.08}
+    .hero-content{position:relative;z-index:1;max-width:860px}
+    .hero h1{font-size:2.2rem;font-weight:800;margin-bottom:.4rem;display:flex;align-items:center;gap:.8rem}
+    .hero p{font-size:1rem;opacity:.9}
+    .hero-badges{display:flex;gap:.75rem;margin-top:1rem;flex-wrap:wrap}
+    .hero-badge{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+                color:#fff;padding:.3rem .85rem;border-radius:999px;font-size:.8rem;font-weight:600}
+
+    /* ── MODULE TABS ── */
+    .module-tabs{max-width:1200px;margin:0 auto;padding:1.5rem 1.5rem 0;display:flex;gap:0}
+    .tab-btn{flex:1;padding:1rem 1.5rem;background:#fff;border:2px solid var(--border);
+             cursor:pointer;font-weight:700;font-size:.95rem;color:var(--muted);
+             transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+    .tab-btn:first-child{border-radius:12px 0 0 0}
+    .tab-btn:last-child{border-radius:0 12px 0 0}
+    .tab-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+    /* ── CONTAINERS ── */
+    .module-panel{display:none;max-width:1200px;margin:0 auto;padding:0 1.5rem 3rem}
+    .module-panel.active{display:block}
+
+    /* ── CARD ── */
+    .card{background:var(--white);border-radius:16px;padding:2rem;box-shadow:var(--shadow);margin-bottom:1.5rem}
+    .card-title{font-size:1.05rem;font-weight:700;margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem;color:var(--text)}
+    .card-title svg{color:var(--primary)}
+
+    /* ── FORM GRID ── */
+    .form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem}
+    .form-group label{display:block;font-size:.75rem;font-weight:700;text-transform:uppercase;
+                       letter-spacing:.04em;color:var(--muted);margin-bottom:.5rem}
+    .form-group input,.form-group select,.form-group textarea{
+      width:100%;border:1.5px solid var(--border);border-radius:10px;padding:.75rem 1rem;
+      font-size:.92rem;outline:none;background:#fff;transition:border-color .2s,box-shadow .2s;
+      font-family:inherit}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+      border-color:var(--primary);box-shadow:0 0 0 3px rgba(140,82,255,.1)}
+    .form-group textarea{resize:vertical;min-height:90px}
+
+    /* ── BUTTONS ── */
+    .btn-primary{background:var(--primary);color:#fff;border:none;padding:.9rem 1.75rem;
+                 border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer;
+                 display:inline-flex;align-items:center;gap:.5rem;transition:all .25s}
+    .btn-primary:hover{background:var(--primary-dark);box-shadow:0 8px 20px -4px rgba(140,82,255,.4)}
+    .btn-primary:disabled{opacity:.6;cursor:not-allowed}
+    .btn-outline{background:#fff;color:var(--primary);border:2px solid var(--primary);
+                 padding:.75rem 1.25rem;border-radius:10px;font-weight:600;font-size:.9rem;
+                 cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+    .btn-outline:hover{background:var(--primary-soft)}
+    .btn-full{width:100%;justify-content:center;margin-top:1.25rem}
+
+    /* ── SPINNER ── */
+    .spinner{width:18px;height:18px;border:2.5px solid rgba(255,255,255,.35);
+             border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite;display:none}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* ── STATUS BAR ── */
+    .status-bar{background:var(--primary-soft);color:var(--primary-dark);padding:.75rem 1.25rem;
+                border-radius:10px;font-size:.88rem;font-weight:600;margin-bottom:1.25rem;
+                display:none;align-items:center;gap:.5rem}
+    .status-bar.show{display:flex}
+
+    /* ── City combobox (typeahead + dropdown) ── */
+    .combo-wrap{position:relative;width:100%}
+    .combo-input{width:100%;padding:.65rem .85rem;border-radius:10px;border:1.5px solid var(--border);
+                 font-size:.95rem;background:var(--card);color:var(--text)}
+    .combo-dd{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:40;max-height:240px;overflow-y:auto;
+              margin:0;padding:.25rem 0;list-style:none;background:#fff;border:1.5px solid var(--border);
+              border-radius:12px;box-shadow:var(--shadow);display:none}
+    .combo-dd.open{display:block}
+    .combo-dd li{padding:.55rem 1rem;cursor:pointer;font-size:.9rem}
+    .combo-dd li:hover,.combo-dd li.active{background:#F4F6FF}
+
+    /* ── CATEGORY CARDS ── */
+    .categories-grid{display:flex;flex-direction:column;gap:1rem}
+    .cat-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;
+              overflow:hidden;box-shadow:var(--shadow)}
+    .cat-header{display:flex;align-items:center;justify-content:space-between;
+                padding:1rem 1.25rem;cursor:pointer;user-select:none;transition:background .2s}
+    .cat-header:hover{background:#FAFAFF}
+    .cat-title{display:flex;align-items:center;gap:.65rem;font-weight:700;font-size:1rem}
+    .cat-badge{background:var(--primary);color:#fff;font-size:.72rem;font-weight:700;
+               padding:.2rem .55rem;border-radius:999px;min-width:24px;text-align:center}
+    .cat-toggle{color:var(--muted);transition:transform .3s}
+    .cat-card.open .cat-toggle{transform:rotate(180deg)}
+    .cat-body{display:none;padding:0 1.25rem 1.25rem}
+    .cat-card.open .cat-body{display:block}
+    .cat-explanation{background:#F8F5FF;border-left:3px solid var(--primary);
+                     padding:.6rem .85rem;border-radius:0 8px 8px 0;
+                     font-size:.85rem;color:var(--muted);margin-bottom:.85rem}
+
+    /* ── PRODUCT TABLE ── */
+    .product-table-wrap{overflow-x:auto;border-radius:10px;border:1px solid var(--border)}
+    .product-table{width:100%;border-collapse:collapse;font-size:.85rem;table-layout:fixed}
+    .product-table th{background:#F8FAFC;padding:.65rem 1rem;text-align:left;
+                       font-weight:700;color:var(--muted);font-size:.75rem;text-transform:uppercase;
+                       letter-spacing:.04em;border-bottom:1px solid var(--border);word-break:break-word}
+    .product-table th:nth-child(1){width:32%}
+    .product-table th:nth-child(2){width:12%}
+    .product-table th:nth-child(3){width:10%}
+    .product-table th:nth-child(4){width:14%}
+    .product-table th:nth-child(5){width:12%}
+    .product-table th:nth-child(6){width:10%}
+    .product-table th:nth-child(7){width:10%}
+    .product-table th:nth-child(8){width:10%}
+    .product-table td{padding:.65rem 1rem;border-bottom:1px solid #F1F5F9;vertical-align:top;word-break:break-word}
+    .product-table tr:last-child td{border-bottom:none}
+    .product-table tr:hover td{background:#FAFAFF}
+    /* ── BOQ drill-down (enriched / SaaS-style) ── */
+    .boq-toolbar{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:center;margin-bottom:.75rem;padding:.55rem .7rem;background:linear-gradient(135deg,#F4EEFF,#EAF6FF);border-radius:12px;border:1px solid #E9D5FF}
+    .boq-toolbar label{font-size:.68rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+    .boq-toolbar select,.boq-toolbar input{font-size:.8rem;padding:.35rem .5rem;border-radius:8px;border:1px solid var(--border);background:#fff}
+    .phase-badge{display:inline-flex;align-items:center;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:.18rem .42rem;border-radius:6px;white-space:nowrap}
+    .phase-badge--Foundation{background:#FEF3C7;color:#92400E}
+    .phase-badge--Structure{background:#DBEAFE;color:#1E3A8A}
+    .phase-badge--Masonry{background:#E7E5E4;color:#44403C}
+    .phase-badge--Finishing{background:#EDE9FE;color:#5B21B6}
+    .phase-badge--General{background:#F1F5F9;color:#475569}
+    .boq-desc{display:block;line-height:1.45;margin-top:.2rem;max-width:100%}
+    .boq-desc--catalog{font-size:.76rem;color:var(--muted);font-style:italic;font-weight:480}
+    .boq-desc--muted{font-size:.74rem;color:#94A3B8;font-style:normal;font-weight:450}
+    .boq-items-wrap{border-radius:12px;border:1px solid var(--border);overflow-x:auto;background:#fff}
+    .boq-items-inner{min-width:720px}
+    /* Shared column template: fixed tracks so header + each row align (separate grids used to misalign with fr/minmax). */
+    .boq-item-head,.boq-item-row{
+      display:grid;
+      grid-template-columns:minmax(0,1.85fr) 7.85rem 5.85rem 5.5rem 6.25rem 3.35rem;
+      column-gap:.45rem;
+      align-items:start;
+      padding:.5rem .65rem;
+      font-size:.78rem;
+    }
+    .boq-item-head > div:first-child,
+    .boq-item-row > div:first-child{min-width:0;position:relative}
+    .boq-item-phase{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      justify-content:flex-start;
+      gap:0;
+      text-align:right;
+      min-width:0;
+    }
+    .boq-item-head > div:nth-child(n+2){text-align:right}
+    .boq-item-head{font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:.66rem;color:var(--muted);background:linear-gradient(90deg,#FAF5FF,#F0F9FF);border-bottom:1px solid var(--border)}
+    .boq-item-row{border-bottom:1px solid #F1F5F9;transition:background .15s ease}
+    .boq-item-row:last-child{border-bottom:none}
+    .boq-item-row:hover{background:#FAFBFF}
+    .boq-item-row--hot{background:linear-gradient(90deg,#FFF7ED,#FFFBEB)}
+    .boq-item-name{font-weight:600;color:var(--text);cursor:default;word-break:break-word}
+    .boq-item-sub{font-weight:800;color:var(--primary-dark);text-align:right;font-variant-numeric:tabular-nums}
+    .boq-item-qty{font-variant-numeric:tabular-nums;color:var(--text);text-align:right}
+    /* Unit PKR column (4th cell) */
+    .boq-item-row > div:nth-child(4){text-align:right;white-space:nowrap}
+    .boq-item-floor{font-size:.72rem;color:var(--muted);text-align:right;white-space:nowrap;padding-top:.1rem}
+    /* Quantity formula: overlay under the product cell; only on row hover (row title = native tooltip fallback). */
+    .boq-calc-hint{
+      position:absolute;left:0;right:0;top:100%;margin-top:2px;z-index:3;
+      font-size:.68rem;color:#475569;line-height:1.35;padding:.3rem .4rem;
+      background:#fff;border:1px solid #E2E8F0;border-radius:8px;
+      box-shadow:0 6px 18px rgba(15,23,42,.1);
+      max-height:9rem;overflow:auto;
+      opacity:0;visibility:hidden;pointer-events:none;
+      transition:opacity .14s ease,visibility .14s ease;
+    }
+    .boq-item-row:hover .boq-calc-hint,
+    .boq-item-row:focus-within .boq-calc-hint{
+      opacity:1;visibility:visible;pointer-events:auto;
+    }
+    @media(max-width:720px){
+      .boq-items-inner{min-width:100%}
+      .boq-item-head{display:none}
+      .boq-item-row{grid-template-columns:1fr;gap:.2rem;padding:.75rem .65rem;border:1px solid #F1F5F9;border-radius:10px;margin-bottom:.45rem}
+    }
+    .avail-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:.4rem}
+    .avail-ok{background:var(--success)}
+    .avail-no{background:var(--warning)}
+    .score-pill{background:var(--primary-soft);color:var(--primary-dark);font-weight:700;
+                font-size:.75rem;padding:.15rem .5rem;border-radius:999px}
+
+    /* ── SUMMARY PANEL ── */
+    .summary-panel{background:linear-gradient(135deg,#F0EAFF,#E8F8FF);border-radius:14px;
+                   padding:1.25rem 1.5rem;margin-bottom:1.5rem}
+    .summary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;margin-top:.85rem}
+    .summary-stat{background:#fff;border-radius:10px;padding:.85rem 1rem;text-align:center;box-shadow:0 2px 8px -2px rgba(0,0,0,.06)}
+    .summary-stat-value{font-size:1.6rem;font-weight:800;color:var(--primary)}
+    .summary-stat-label{font-size:.75rem;color:var(--muted);font-weight:500}
+
+    /* ── BOQ TABLE (inside accordion) ── */
+    details.boq-details summary{cursor:pointer;font-weight:600;font-size:.9rem;color:var(--primary);
+                                  margin-top:.85rem;padding:.4rem 0}
+
+    /* ── COST ESTIMATION ── */
+    .cost-output{display:none}
+    .cost-output.show{display:block}
+    .cost-summary-row{display:flex;justify-content:space-between;align-items:center;
+                      background:var(--gradient);color:#fff;border-radius:14px;
+                      padding:1.5rem 2rem;margin-bottom:1.5rem}
+    .cost-total{font-size:2rem;font-weight:800}
+    .cost-per-sqft{font-size:.95rem;opacity:.85;margin-top:.25rem}
+    .cost-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
+    @media(max-width:700px){.cost-grid{grid-template-columns:1fr}}
+    .itemized-table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border)}
+    .itemized-table{width:100%;border-collapse:collapse;font-size:.85rem}
+    .itemized-table th{background:#F8FAFC;padding:.7rem 1rem;text-align:left;font-size:.75rem;
+                        font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;
+                        border-bottom:1px solid var(--border)}
+    .itemized-table td{padding:.65rem 1rem;border-bottom:1px solid #F1F5F9}
+    .itemized-table tr:last-child td{border-bottom:none;font-weight:700;background:#FAFAFF}
+    .chart-wrap{position:relative;height:280px;display:flex;align-items:center;justify-content:center}
+    .tips-list{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin-top:.5rem}
+    .tips-list li{background:#F8FFF6;border:1px solid #BBF7D0;border-radius:8px;
+                  padding:.6rem .9rem;font-size:.88rem;display:flex;align-items:flex-start;gap:.5rem}
+    .tips-list li::before{content:'💡';flex-shrink:0}
+    .cost-actions{display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.25rem}
+
+    /* ── CHATBOT ── */
+    .chatbot-widget{position:fixed;bottom:24px;right:24px;z-index:9999}
+    .chatbot-icon{width:54px;height:54px;background:var(--gradient);border-radius:50%;
+                  cursor:pointer;display:flex;align-items:center;justify-content:center;
+                  box-shadow:0 4px 18px rgba(140,82,255,.45);border:none;transition:transform .25s,box-shadow .25s}
+    .chatbot-icon:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(140,82,255,.55)}
+    /* Fixed size: 360×480 */
+    .chatbot-window{position:absolute;bottom:66px;right:0;width:360px;height:480px;
+                    background:#0F172A;border-radius:14px;box-shadow:0 18px 60px rgba(0,0,0,.45);
+                    display:flex;flex-direction:column;opacity:0;visibility:hidden;
+                    transform:translateY(10px) scale(.97);
+                    transition:opacity .22s ease,transform .22s ease,visibility .22s}
+    .chatbot-window.active{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+    /* Header */
+    .chatbot-header{padding:.9rem 1rem;background:linear-gradient(135deg,#6D28D9,#7C3AED);
+                    border-radius:14px 14px 0 0;display:flex;justify-content:space-between;
+                    align-items:center;color:#fff;flex-shrink:0}
+    .chatbot-header-text h3{font-size:.95rem;font-weight:800;margin:0}
+    .chatbot-header-text p{font-size:.73rem;opacity:.9;margin:0;margin-top:.15rem}
+    .chatbot-header-actions{display:flex;gap:.35rem;align-items:center}
+    .chatbot-close{background:rgba(255,255,255,.2);border:none;color:#fff;cursor:pointer;
+                   font-size:1rem;border-radius:6px;width:26px;height:26px;
+                   display:flex;align-items:center;justify-content:center;transition:background .2s}
+    .chatbot-close:hover{background:rgba(255,255,255,.35)}
+    /* Messages */
+    .chatbot-messages{flex:1;overflow-y:auto;padding:.9rem;display:flex;flex-direction:column;
+                       gap:.7rem;background:#0B1220;min-height:0}
+    .chatbot-messages::-webkit-scrollbar{width:4px}
+    .chatbot-messages::-webkit-scrollbar-thumb{background:#D1C4FF;border-radius:4px}
+    .message{display:flex;animation:slideIn .2s ease}
+    @keyframes slideIn{from{opacity:0;transform:translateY(6px)}}
+    .message.user{justify-content:flex-end}
+    .message.bot{justify-content:flex-start;gap:.55rem}
+    .chatbot-avatar{width:28px;height:28px;border-radius:999px;background:#111827;border:1px solid rgba(148,163,184,.35);
+                    display:flex;align-items:center;justify-content:center;color:#E2E8F0;font-weight:900;font-size:.72rem;flex-shrink:0;margin-top:.2rem}
+    .message-bubble{
+      max-width:88%;
+      padding:.65rem .85rem;
+      border-radius:10px;
+      word-break:break-word;
+      font-size:.86rem;
+      line-height:1.55;
+      text-align:left;
+      white-space:normal;
+    }
+    .message.bot .message-bubble{background:#111827;color:#E5E7EB;border:1px solid rgba(148,163,184,.18);
+                                  border-bottom-left-radius:3px}
+    .message.user .message-bubble{background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;border:1px solid rgba(167,139,250,.28);border-bottom-right-radius:3px}
+    /* Formatted bot message elements */
+    .message-bubble strong{font-weight:700}
+    .message-bubble p{margin:.25rem 0}
+    .message-bubble ol{padding-left:1.15rem;margin:.35rem 0}
+    .message-bubble ol li{margin:.22rem 0;font-size:.84rem}
+    .message-bubble ul.msg-bullets{list-style:none;padding:0;margin:.35rem 0}
+    .message-bubble ul.msg-bullets li::before{content:"• ";color:var(--primary);font-weight:700}
+    .message-bubble ul.msg-bullets li{font-size:.84rem;margin:.22rem 0;padding-left:.25rem}
+    .message-bubble br{display:block;content:"";margin:.25rem 0}
+    .msg-tip{background:rgba(16,185,129,.10);border-left:3px solid #10B981;padding:.3rem .6rem;
+             border-radius:0 6px 6px 0;font-size:.78rem;margin-top:.4rem;color:#A7F3D0}
+    /* Input */
+    .chatbot-input-area{padding:.7rem .75rem;border-top:1px solid rgba(148,163,184,.14);
+                         background:#0F172A;border-radius:0 0 14px 14px;flex-shrink:0}
+    .chatbot-suggestions{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.55rem}
+    .chat-suggest{background:rgba(15,23,42,.75);border:1px solid rgba(148,163,184,.22);color:#E5E7EB;
+                  padding:.5rem .75rem;border-radius:12px;font-size:.78rem;font-weight:700;cursor:pointer;
+                  transition:transform .12s,background .12s,border-color .12s}
+    .chat-suggest:hover{transform:translateY(-1px);background:rgba(30,41,59,.85);border-color:rgba(167,139,250,.40)}
+    .chatbot-input-row{display:flex;gap:.5rem;align-items:center}
+    .chatbot-input-area input{flex:1;border:1.5px solid rgba(148,163,184,.22);border-radius:12px;
+                               padding:.62rem .8rem;font-size:.84rem;outline:none;font-family:inherit;
+                               background:#0B1220;color:#E5E7EB}
+    .chatbot-input-area input::placeholder{color:#94A3B8}
+    .chatbot-input-area input:focus{border-color:rgba(167,139,250,.65);box-shadow:0 0 0 3px rgba(124,58,237,.18)}
+    .chatbot-send{background:linear-gradient(135deg,#6D28D9,#7C3AED);border:none;color:#fff;width:38px;height:38px;
+                  border-radius:12px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;
+                  justify-content:center;transition:filter .2s,transform .12s}
+    .chatbot-send:hover{filter:brightness(1.06)}
+    .chatbot-send:active{transform:scale(.98)}
+    .chatbot-send:disabled{opacity:.45;cursor:not-allowed}
+    /* Typing indicator */
+    .typing-dots{display:flex;gap:4px;align-items:center;padding:.2rem 0}
+    .typing-dots span{width:6px;height:6px;border-radius:50%;background:var(--primary);
+                      animation:blink 1.2s infinite}
+    .typing-dots span:nth-child(2){animation-delay:.2s}
+    .typing-dots span:nth-child(3){animation-delay:.4s}
+    @keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+    /* Follow-up chips */
+    .chips-row{display:flex;flex-wrap:wrap;gap:.3rem;padding:.1rem 0}
+    .follow-up-chip{background:#fff;border:1px solid #C5B3FF;color:var(--primary);
+                    padding:.25rem .6rem;border-radius:999px;font-size:.75rem;cursor:pointer;
+                    transition:all .18s;font-family:inherit;white-space:nowrap}
+    .follow-up-chip:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+    /* Product mini card */
+    .product-mini-card{background:#F8F5FF;border:1px solid #DDD6FE;border-radius:8px;
+                       padding:.5rem .75rem;margin-top:.35rem;font-size:.8rem}
+    .product-mini-card strong{display:block;color:var(--text);font-size:.83rem;margin-bottom:.15rem}
+    .step-list{padding-left:1rem;margin:.25rem 0}
+    .step-list li{margin:.2rem 0;font-size:.82rem;color:var(--muted)}
+
+    /* Chat: intent routing (visible module hand-off) */
+    /* Hide routing tags to match the requested UI (still present in DOM for debugging) */
+    .chat-intent-row{display:none}
+    .chat-intent-pill{font-size:.65rem;font-weight:800;padding:.22rem .55rem;border-radius:999px;
+                      text-transform:uppercase;letter-spacing:.04em;line-height:1.2}
+    .chat-intent-pill--rec{background:#EDE9FE;color:#5B21B6;border:1px solid #C4B5FD}
+    .chat-intent-pill--cost{background:#DBEAFE;color:#1E3A8A;border:1px solid #93C5FD}
+    .chat-intent-pill--mixed{background:linear-gradient(135deg,#EDE9FE,#DBEAFE);color:#312E81;border:1px solid #A5B4FC}
+    .chat-intent-pill--help{background:#ECFDF5;color:#065F46;border:1px solid #6EE7B7}
+    .chat-intent-pill--clarify{background:#FFFBEB;color:#92400E;border:1px solid #FCD34D}
+    .chat-intent-pill--neutral{background:#F1F5F9;color:#334155;border:1px solid #CBD5E1}
+    .chat-intent-conf{font-size:.62rem;color:var(--muted);font-weight:600}
+    .msg-h2{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.055em;
+             color:var(--primary-dark);margin:1rem 0 .35rem;padding-bottom:.25rem;
+             border-bottom:1px solid #E8E4FF;line-height:1.3}
+    .msg-h2:first-child{margin-top:0}
+    .chat-cta-wrap{margin-top:.35rem;padding-top:.35rem;border-top:1px dashed #DDD6FE}
+    .chat-cta-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+                    color:var(--muted);margin-bottom:.35rem}
+    .chat-cta-btn{padding:.5rem 1rem;border-radius:10px;font-size:.78rem;font-weight:700;cursor:pointer;
+                  border:none;font-family:inherit;margin:.2rem .35rem 0 0;transition:transform .12s,box-shadow .12s}
+    .chat-cta-btn:active{transform:scale(.97)}
+    .chat-cta-btn--rec{background:linear-gradient(135deg,#8B5CF6,#6D28D9);color:#fff;
+                       box-shadow:0 2px 10px rgba(109,40,217,.38)}
+    .chat-cta-btn--rec:hover{filter:brightness(1.06)}
+    .chat-cta-btn--cost{background:linear-gradient(135deg,#2563EB,#1D4ED8);color:#fff;
+                        box-shadow:0 2px 10px rgba(37,99,235,.35)}
+    .chat-cta-btn--cost:hover{filter:brightness(1.06)}
+    .chat-cta-btn--ghost{background:#fff;border:1.5px solid #C5B3FF;color:var(--primary-dark)}
+    .chat-cta-btn--ghost:hover{background:#F5F3FF}
+
+    /* Cost estimate: info strips (theme-aware; replaces inline light blues in JS) */
+    .cost-meta-strip{
+      margin-top:.5rem;padding:.75rem 1.25rem;border-radius:10px;font-size:.88rem;font-weight:600;
+      display:flex;align-items:flex-start;gap:.5rem;line-height:1.45;
+      border:1px solid var(--cost-strip-br);background:var(--cost-strip-bg);color:var(--text);
+    }
+    .cost-meta-strip--feas{--cost-strip-bg:#eff6ff;--cost-strip-br:#bae6fd}
+    .cost-meta-strip--notes{--cost-strip-bg:#f8fafc;--cost-strip-br:#e2e8f0}
+    .cost-meta-strip--notes ul{color:var(--muted);font-weight:500}
+
+    /* Theme toggle */
+    .theme-toggle{
+      margin-left:auto;display:inline-flex;align-items:center;justify-content:center;
+      width:42px;height:42px;border-radius:12px;border:1.5px solid var(--border);
+      background:var(--white);color:var(--text);cursor:pointer;transition:background .2s,border-color .2s,transform .15s;
+    }
+    .theme-toggle:hover{border-color:var(--primary);transform:translateY(-1px)}
+    .theme-toggle .theme-icon-sun{display:none}
+    html[data-theme="dark"] .theme-toggle .theme-icon-moon{display:none}
+    html[data-theme="dark"] .theme-toggle .theme-icon-sun{display:block}
+
+    /* ── Dark mode (whole app shell + modules; chat widget keeps its own palette) ── */
+    html[data-theme="dark"]{
+      color-scheme:dark;
+      --bg:#0b0d12;
+      --text:#e8eaf0;
+      --muted:#94a3b8;
+      --border:#2a3344;
+      --white:#141922;
+      --card:#0f131c;
+      --primary-soft:rgba(124,58,237,.22);
+      --shadow:0 6px 28px rgba(0,0,0,.45);
+    }
+    html[data-theme="dark"] body{background:var(--bg);color:var(--text)}
+    html[data-theme="dark"] nav{background:rgba(18,21,29,.94);box-shadow:0 1px 14px rgba(0,0,0,.4)}
+    html[data-theme="dark"] .logo{color:var(--text)}
+    html[data-theme="dark"] .nav-links a{color:#a8b4c9}
+    html[data-theme="dark"] .nav-links a:hover,
+    html[data-theme="dark"] .nav-links a.active{color:var(--primary)}
+    html[data-theme="dark"] .module-tabs{background:transparent}
+    html[data-theme="dark"] .tab-btn:not(.active){
+      background:#161b24;color:#b8c0d0;border-color:var(--border);
+    }
+    html[data-theme="dark"] .tab-btn.active{border-color:var(--primary)}
+    html[data-theme="dark"] .card{background:var(--white);box-shadow:var(--shadow)}
+    html[data-theme="dark"] .form-group input,
+    html[data-theme="dark"] .form-group select,
+    html[data-theme="dark"] .form-group textarea{
+      background:#0f131c;color:var(--text);border-color:var(--border);
+    }
+    html[data-theme="dark"] .btn-outline{background:#161b24;color:#c4b5fd;border-color:#7c3aed}
+    html[data-theme="dark"] .btn-outline:hover{background:#221830}
+    html[data-theme="dark"] .status-bar{background:rgba(124,58,237,.15);color:#ddd6fe;border:1px solid rgba(124,58,237,.35)}
+    html[data-theme="dark"] .combo-input{background:#0f131c;color:var(--text);border-color:var(--border)}
+    html[data-theme="dark"] .combo-dd{background:#161b24;border-color:var(--border)}
+    html[data-theme="dark"] .combo-dd li:hover,
+    html[data-theme="dark"] .combo-dd li.active{background:#252d3d}
+    html[data-theme="dark"] .cat-card{background:var(--white);border-color:var(--border)}
+    html[data-theme="dark"] .cat-header:hover{background:#1a2230}
+    html[data-theme="dark"] .cat-explanation{background:rgba(124,58,237,.12);border-left-color:var(--primary)}
+    html[data-theme="dark"] .product-table th{background:#1a2230;color:#cbd5e1;border-bottom-color:var(--border)}
+    html[data-theme="dark"] .product-table td{border-bottom-color:#252d3d;color:var(--text)}
+    html[data-theme="dark"] .product-table tr:hover td{background:#1a2230}
+    html[data-theme="dark"] .boq-toolbar{background:linear-gradient(135deg,#1e1635,#12202e);border-color:#3d2f66}
+    html[data-theme="dark"] .boq-toolbar select,
+    html[data-theme="dark"] .boq-toolbar input{background:#0f131c;color:var(--text);border-color:var(--border)}
+    html[data-theme="dark"] .boq-items-wrap{background:#0f131c;border-color:var(--border)}
+    html[data-theme="dark"] .boq-item-head{background:linear-gradient(90deg,#1a1530,#152535);border-bottom-color:var(--border);color:#cbd5e1}
+    html[data-theme="dark"] .boq-item-row{border-bottom-color:#252d3d}
+    html[data-theme="dark"] .boq-item-row:hover{background:#161d2e}
+    html[data-theme="dark"] .boq-item-row--hot{background:linear-gradient(90deg,#2a2218,#252018)}
+    html[data-theme="dark"] .boq-calc-hint{background:#161b24;border-color:var(--border);color:#cbd5e1;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+    html[data-theme="dark"] .summary-panel{background:linear-gradient(135deg,#1a1530,#152535)}
+    html[data-theme="dark"] .summary-stat{background:#0f131c;box-shadow:none;border:1px solid var(--border)}
+    html[data-theme="dark"] .itemized-table th{background:#1a2230;color:#cbd5e1;border-bottom-color:var(--border)}
+    html[data-theme="dark"] .itemized-table td{border-bottom-color:#252d3d;color:var(--text)}
+    html[data-theme="dark"] .itemized-table tr:last-child td{background:#1a1f2e}
+    html[data-theme="dark"] .tips-list li{background:rgba(16,185,129,.08);border-color:#166534;color:#d1fae5}
+    html[data-theme="dark"] .follow-up-chip{background:#161b24;border-color:#6d28d9;color:#ddd6fe}
+    html[data-theme="dark"] .product-mini-card{background:#1a1530;border-color:#4c1d95;color:var(--text)}
+    html[data-theme="dark"] .cost-meta-strip--feas{--cost-strip-bg:rgba(30,58,138,.28);--cost-strip-br:#334155}
+    html[data-theme="dark"] .cost-meta-strip--notes{--cost-strip-bg:#161b24;--cost-strip-br:#334155}
+    html[data-theme="dark"] .msg-h2{color:#ddd6fe;border-bottom-color:#352f55}
+    html[data-theme="dark"] .chat-cta-wrap{border-top-color:#3d2f66}
+    html[data-theme="dark"] .chat-cta-btn--ghost{background:#161b24;border-color:#6d28d9;color:#e9d5ff}
+    html[data-theme="dark"] .chat-cta-btn--ghost:hover{background:#221830}
+    html[data-theme="dark"] .theme-toggle{background:#161b24;border-color:var(--border);color:#e8eaf0}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .hero h1{font-size:1.7rem}
+      .chatbot-window{width:100%;height:100%;bottom:0!important;right:0!important;border-radius:0}
+      .form-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){.module-tabs{flex-direction:column}.tab-btn{border-radius:0}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon"><i data-lucide="hard-hat"></i></div>
+    BuildHive
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#" class="active">AI Assistant</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Dark mode">
+    <i data-lucide="moon" class="theme-icon-moon" width="20" height="20"></i>
+    <i data-lucide="sun" class="theme-icon-sun" width="20" height="20"></i>
+  </button>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <h1><i data-lucide="sparkles"></i> BuildHive AI Assistant</h1>
+    <p>We are here to help you with your construction needs.</p>
+    <div class="hero-badges">
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ MODULE TABS ═══════════════════════════ -->
+<div class="module-tabs">
+  <button class="tab-btn active" onclick="switchTab('rec')">
+    <i data-lucide="package"></i> Recommendation System
+  </button>
+  <button class="tab-btn" onclick="switchTab('cost')">
+    <i data-lucide="calculator"></i> Cost Estimation
+  </button>
+</div>
+
+<!-- ═══════════════════════════ MODULE 1: RECOMMENDATION ═════════════════════ -->
+<div class="module-panel active" id="panel-rec">
+
+  <!-- Input Card -->
+  <div class="card" style="margin-top:1.5rem">
+    <div class="card-title"><i data-lucide="search"></i> Describe Your Project</div>
+    <div class="form-grid" style="margin-bottom:1.25rem">
+      <div class="form-group" style="grid-column:1/-1">
+        <label>Project Description</label>
+        <textarea id="rec-text" placeholder="e.g. I need materials for a 5 marla standard house in Lahore…"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Area (marla, kanal, sqft)</label>
+        <input type="text" id="rec-area" placeholder="5 marla">
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <div class="combo-wrap" data-combo-wrap="rec-city">
+          <input type="text" id="rec-city" class="combo-input" placeholder="Type or select city" value="Lahore" autocomplete="off" aria-autocomplete="list" aria-expanded="false">
+          <ul id="rec-city-dd" class="combo-dd" role="listbox" hidden></ul>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Quality Grade</label>
+        <select id="rec-quality">
+          <option>Economy</option>
+          <option selected>Standard</option>
+          <option>Premium</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Max Budget (Rs)</label>
+        <input type="number" id="rec-budget" placeholder="optional">
+      </div>
+    </div>
+    <div style="display:flex;gap:.85rem;flex-wrap:wrap;align-items:center">
+      <button class="btn-primary btn-full" id="rec-btn" onclick="getRec()">
+        <i data-lucide="sparkles"></i>
+        <span id="rec-btn-label">Get AI Recommendations</span>
+        <div id="rec-spinner" class="spinner"></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div class="status-bar" id="rec-status"></div>
+
+  <!-- Results -->
+  <div id="rec-results"></div>
+</div>
+
+<!-- ═══════════════════════════ MODULE 2: COST ESTIMATION ════════════════════ -->
+<div class="module-panel" id="panel-cost">
+
+  <div class="card" style="margin-top:1.5rem">
+    <div class="card-title"><i data-lucide="calculator"></i> Project Details</div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Area (Marla)</label>
+        <input type="number" id="cost-marla" placeholder="e.g. 5" min="0" step="0.01">
+      </div>
+      <div class="form-group">
+        <label>Area (Sqft)</label>
+        <input type="number" id="cost-sqft" placeholder="e.g. 1361" min="0" step="1">
+      </div>
+      <div class="form-group">
+        <label>Project Type</label>
+        <select id="cost-project-type">
+          <option>Full Construction</option>
+          <option>Grey Structure Only</option>
+          <option>Renovation / Finishing</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label title="Finishing tier sets a bundled PKR/sqft allowance from config; bathroom count and BHK still move wet trades, labour, and layout lines in the estimate.">Quality (finishing tier)</label>
+        <select id="cost-quality">
+          <option>Economy</option>
+          <option selected>Standard</option>
+          <option>Premium</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <div class="combo-wrap" data-combo-wrap="cost-city">
+          <input type="text" id="cost-city" class="combo-input" placeholder="Type or select city" value="Lahore" autocomplete="off" aria-autocomplete="list" aria-expanded="false">
+          <ul id="cost-city-dd" class="combo-dd" role="listbox" hidden></ul>
+        </div>
+        <div style="margin-top:.35rem;color:var(--muted);font-size:.78rem">
+          Only cities with PKR rate cards are listed. Marla→sqft uses city standards from data. Minimum input: <strong>2 marla</strong> (or equivalent sqft).
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Floors</label>
+        <select id="cost-floors">
+          <option value="1">1 Floor</option>
+          <option value="2">2 Floors</option>
+          <option value="3">3 Floors</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label title="Maps to default bedrooms, bathrooms, and kitchens (see API layout_assumption). Change BHK to resize wet and room-heavy scope.">Layout (BHK)</label>
+        <select id="cost-bhk">
+          <option value="1">1 BHK</option>
+          <option value="2">2 BHK</option>
+          <option value="3" selected>3 BHK</option>
+          <option value="4">4 BHK</option>
+          <option value="5">5 BHK</option>
+          <option value="6">6 BHK</option>
+        </select>
+      </div>
+      <div class="form-group" style="grid-column:1/-1">
+        <div id="cost-feasibility-hint" style="min-height:1.15rem;font-size:.78rem;color:var(--muted)"></div>
+      </div>
+    </div>
+    <button class="btn-primary btn-full" id="cost-btn" onclick="getCost()">
+      <i data-lucide="calculator"></i>
+      <span id="cost-btn-label">Calculate Cost Estimate</span>
+      <div id="cost-spinner" class="spinner"></div>
+    </button>
+  </div>
+
+  <div class="status-bar" id="cost-status"></div>
+
+  <!-- Output area (hidden until first result) -->
+  <div id="cost-output" class="cost-output">
+
+    <!-- Summary Banner -->
+    <div class="cost-summary-row" id="cost-banner">
+      <div>
+        <div style="font-size:.95rem;opacity:.85;margin-bottom:.3rem">Estimated Total Cost</div>
+        <div class="cost-total" id="cost-total">—</div>
+        <div class="cost-per-sqft" id="cost-persqft"></div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:.85rem;opacity:.8">Quality</div>
+        <div style="font-weight:700;font-size:1.1rem" id="cost-grade-label"></div>
+        <div style="font-size:.82rem;opacity:.7;margin-top:.2rem" id="cost-city-label"></div>
+      </div>
+    </div>
+
+    <div class="cost-grid">
+
+      <!-- Itemized Table -->
+      <div class="card" style="margin-bottom:0">
+        <div class="card-title"><i data-lucide="list"></i> Itemized Breakdown</div>
+        <div class="itemized-table-wrap">
+          <table class="itemized-table" id="cost-table">
+            <thead>
+              <tr><th>Item / category</th><th>Subtotal (Rs)</th></tr>
+            </thead>
+            <tbody id="cost-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Pie Chart -->
+      <div class="card" style="margin-bottom:0">
+        <div class="card-title"><i data-lucide="pie-chart"></i> Cost Distribution</div>
+        <div class="chart-wrap"><canvas id="cost-chart"></canvas></div>
+      </div>
+
+    </div>
+
+    <!-- Tips -->
+    <div class="card" id="cost-tips-card" style="display:none">
+      <div class="card-title"><i data-lucide="lightbulb"></i> AI Cost-Saving Tips</div>
+      <ul class="tips-list" id="cost-tips-list"></ul>
+    </div>
+
+    <!-- Actions -->
+    <div class="cost-actions">
+      <button class="btn-outline" onclick="saveCostEstimate()">
+        <i data-lucide="bookmark"></i> Save Estimate
+      </button>
+      <button class="btn-outline" onclick="useInRecommendation()">
+        <i data-lucide="arrow-right"></i> Use in Recommendations
+      </button>
+      <button class="btn-outline" onclick="compareCostTiers()">
+        <i data-lucide="bar-chart-2"></i> Compare All Grades
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════ CHATBOT ══════════════════════════════ -->
+<div class="chatbot-widget">
+  <button class="chatbot-icon" id="chatbotToggle" title="BuildHive Assistant">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" width="26" height="26">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </button>
+
+  <div class="chatbot-window" id="chatbotWindow">
+    <!-- Header -->
+    <div class="chatbot-header">
+      <div class="chatbot-header-text">
+        <h3>BuildHive Assistant</h3>
+        <p>Ask about materials, costs, or platform help</p>
+      </div>
+      <div class="chatbot-header-actions">
+        <button class="chatbot-close" id="chatbotClose" title="Close">✕</button>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="chatbot-messages" id="chatbotMessages">
+      <div class="message bot">
+        <div class="chatbot-avatar" aria-hidden="true">BH</div>
+        <div class="message-bubble">
+          Hi! How can I help you today?
+        </div>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="chatbot-input-area">
+      <div class="chatbot-suggestions" id="chatbotSuggestions">
+        <button type="button" class="chat-suggest" data-chat="5 marla house estimate">5 marla house estimate</button>
+        <button type="button" class="chat-suggest" data-chat="Find cement in Lahore">Find cement in Lahore</button>
+        <button type="button" class="chat-suggest" data-chat="How to contact a vendor">How to contact a vendor</button>
+      </div>
+      <div class="chatbot-input-row">
+        <input type="text" id="chatbotInput" placeholder="Type your question…" autocomplete="off">
+        <button class="chatbot-send" id="chatbotSend" title="Send">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
+            <path d="M2 21l21-9L2 3v7l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// UTILITIES
+// ═══════════════════════════════════════════════════════════════════
+
+function escapeHtml(t) {
+  if (t == null) return '';
+  return String(t).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+}
+
+function fmtN(n) {
+  if (n == null) return '—';
+  return Number(n).toLocaleString('en-PK');
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    b.classList.toggle('active', (i === 0 && tab === 'rec') || (i === 1 && tab === 'cost'));
+  });
+  document.querySelectorAll('.module-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(tab === 'rec' ? 'panel-rec' : 'panel-cost').classList.add('active');
+}
+
+// City-aware marla sqft (matches server `city_area_standards` when /estimator-config loaded)
+function marlaSqftForCity(city) {
+  const key = String(city || '').trim().toLowerCase();
+  if (window._cityMarlaMap && window._cityMarlaMap[key] != null) {
+    return Number(window._cityMarlaMap[key]);
+  }
+  const map = {
+    lahore: 225, karachi: 272, islamabad: 272, rawalpindi: 272,
+    faisalabad: 225, multan: 225, quetta: 272, peshawar: 272,
+  };
+  return map[key] || 272;
+}
+
+const _FALLBACK_ESTIMATOR_BANDS = [
+  { max_plot_sqft: 225, max_bed: 1, max_bath: 1, max_kitchen: 1 },
+  { max_plot_sqft: 450, max_bed: 2, max_bath: 2, max_kitchen: 1 },
+  { max_plot_sqft: 675, max_bed: 3, max_bath: 3, max_kitchen: 2 },
+  { max_plot_sqft: 1125, max_bed: 4, max_bath: 3, max_kitchen: 2 },
+  { max_plot_sqft: 1580, max_bed: 5, max_bath: 4, max_kitchen: 2 },
+  { max_plot_sqft: 999999, max_bed: 6, max_bath: 5, max_kitchen: 3 },
+];
+
+function plotFootprintSqft() {
+  const sq = parseInt(document.getElementById('cost-sqft')?.value, 10);
+  if (Number.isFinite(sq) && sq > 0) return sq;
+  const m = parseFloat(document.getElementById('cost-marla')?.value);
+  const c = document.getElementById('cost-city')?.value || '';
+  if (Number.isFinite(m) && m > 0) return Math.round(m * marlaSqftForCity(c));
+  return 0;
+}
+
+function applyFeasibilityCapsFromPlot() {
+  const bands = window._estimatorBands && window._estimatorBands.length ? window._estimatorBands : _FALLBACK_ESTIMATOR_BANDS;
+  const hint = document.getElementById('cost-feasibility-hint');
+  const bhkEl = document.getElementById('cost-bhk');
+  if (!bhkEl) return;
+  const ps = plotFootprintSqft();
+  if (!(ps > 0)) {
+    if (hint) hint.textContent = '';
+    return;
+  }
+  let maxB = 20, maxBt = 20;
+  for (const b of bands) {
+    if (ps <= b.max_plot_sqft) {
+      maxB = b.max_bed;
+      maxBt = b.max_bath;
+      break;
+    }
+  }
+  const maxBhk = Math.min(6, Math.max(1, Math.min(maxB, maxBt)));
+  let changed = false;
+  Array.from(bhkEl.options).forEach((opt) => {
+    const v = parseInt(opt.value, 10);
+    opt.disabled = v > maxBhk;
+  });
+  const cur = parseInt(bhkEl.value, 10) || 1;
+  if (cur > maxBhk) {
+    bhkEl.value = String(maxBhk);
+    changed = true;
+  }
+  if (hint) {
+    hint.textContent = changed
+      ? `Adjusted layout to the maximum BHK typical for ~${ps} sqft (${maxBhk} BHK).`
+      : `Typical planning max for ~${ps} sqft: up to ${maxBhk} BHK (config-driven; BHK maps to default bed/bath counts).`;
+  }
+}
+
+function fillCityDropdown(ulId, cities) {
+  const ul = document.getElementById(ulId);
+  if (!ul) return;
+  ul.innerHTML = '';
+  (cities || []).forEach(c => {
+    if (!c.rates_available) return;
+    const li = document.createElement('li');
+    li.role = 'option';
+    li.dataset.value = c.label || c.id;
+    li.textContent = c.label || String(c.id).replace(/^./, s => s.toUpperCase());
+    ul.appendChild(li);
+  });
+}
+
+function wireCityCombobox(inputId, ulId) {
+  const input = document.getElementById(inputId);
+  const ul = document.getElementById(ulId);
+  if (!input || !ul) return;
+  let active = -1;
+  const items = () => Array.from(ul.querySelectorAll('li'));
+
+  function filterList() {
+    const q = input.value.trim().toLowerCase();
+    items().forEach(li => {
+      li.style.display = !q || li.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+  }
+
+  function openDd(show) {
+    ul.classList.toggle('open', !!show);
+    ul.hidden = !show;
+    input.setAttribute('aria-expanded', show ? 'true' : 'false');
+    if (show) { filterList(); active = -1; }
+  }
+
+  function pickLabel(label) {
+    input.value = label;
+    openDd(false);
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    if (inputId === 'cost-city') applyFeasibilityCapsFromPlot();
+  }
+
+  input.addEventListener('focus', () => { openDd(true); });
+  input.addEventListener('input', () => { openDd(true); filterList(); });
+  input.addEventListener('keydown', (ev) => {
+    const vis = items().filter(li => li.style.display !== 'none');
+    if (!ul.classList.contains('open') && (ev.key === 'ArrowDown' || ev.key === 'Enter')) openDd(true);
+    if (!ul.classList.contains('open')) return;
+    if (ev.key === 'Escape') { openDd(false); return; }
+    if (ev.key === 'ArrowDown') { ev.preventDefault(); active = Math.min(active + 1, vis.length - 1); vis.forEach((li, i) => li.classList.toggle('active', i === active)); }
+    if (ev.key === 'ArrowUp') { ev.preventDefault(); active = Math.max(active - 1, 0); vis.forEach((li, i) => li.classList.toggle('active', i === active)); }
+    if (ev.key === 'Enter' && active >= 0 && vis[active]) { ev.preventDefault(); pickLabel(vis[active].textContent); }
+  });
+  ul.addEventListener('mousedown', (ev) => {
+    const li = ev.target.closest('li');
+    if (li && li.textContent) pickLabel(li.textContent);
+  });
+  document.addEventListener('click', (ev) => {
+    if (!input.contains(ev.target) && !ul.contains(ev.target)) openDd(false);
+  });
+}
+
+async function loadEstimationConfig() {
+  try {
+    const r = await fetch('/estimator-config');
+    const j = await r.json();
+    window._estimatorBands = j.feasibility_bands || _FALLBACK_ESTIMATOR_BANDS;
+    window._cityMarlaMap = {};
+    (j.cities || []).forEach(c => {
+      const id = String(c.id || '').toLowerCase();
+      let v = Number(c.marla_sqft);
+      if (v === 272.25 || v === 272.5) v = 272;
+      // Only accept finite positive values — never replace with 272 on NaN/0 (that hid Supabase sync bugs).
+      if (id && Number.isFinite(v) && v > 0) window._cityMarlaMap[id] = v;
+    });
+    fillCityDropdown('cost-city-dd', j.cities);
+    fillCityDropdown('rec-city-dd', j.cities);
+    wireCityCombobox('cost-city', 'cost-city-dd');
+    wireCityCombobox('rec-city', 'rec-city-dd');
+  } catch (e) {
+    console.warn('estimator-config', e);
+    window._estimatorBands = _FALLBACK_ESTIMATOR_BANDS;
+  }
+  applyFeasibilityCapsFromPlot();
+  // Refresh sqft from marla using newly loaded city standards (fixes stale 272 after Supabase update).
+  const marlaEl = document.getElementById('cost-marla');
+  if (marlaEl && marlaEl.value && parseFloat(marlaEl.value) > 0) {
+    marlaEl.dispatchEvent(new Event('input', { bubbles: true }));
+  }
+}
+
+function mapUiQualityToFinishingTierKey(q) {
+  const k = String(q || '').trim().toLowerCase();
+  if (k === 'luxury') return 'premium';
+  const allowed = ['economy', 'standard', 'premium'];
+  return allowed.includes(k) ? k : 'standard';
+}
+
+// Real-time marla ⇄ sqft sync
+let _syncingArea = false;
+function setupAreaSync() {
+  const marlaEl = document.getElementById('cost-marla');
+  const sqftEl  = document.getElementById('cost-sqft');
+  const cityEl  = document.getElementById('cost-city');
+  if (!marlaEl || !sqftEl || !cityEl) return;
+
+  const syncFromMarla = () => {
+    if (_syncingArea) return;
+    _syncingArea = true;
+    const m = parseFloat(marlaEl.value);
+    const per = marlaSqftForCity(cityEl.value);
+    if (Number.isFinite(m) && m > 0) {
+      sqftEl.value = Math.round(m * per);
+    }
+    _syncingArea = false;
+  };
+
+  const syncFromSqft = () => {
+    if (_syncingArea) return;
+    _syncingArea = true;
+    const s = parseFloat(sqftEl.value);
+    const per = marlaSqftForCity(cityEl.value);
+    if (Number.isFinite(s) && s > 0) {
+      marlaEl.value = (s / per).toFixed(2);
+    }
+    _syncingArea = false;
+  };
+
+  marlaEl.addEventListener('input', () => { syncFromMarla(); applyFeasibilityCapsFromPlot(); });
+  sqftEl.addEventListener('input', () => { syncFromSqft(); applyFeasibilityCapsFromPlot(); });
+  cityEl.addEventListener('input', () => {
+    // Recompute using whichever field currently has a value.
+    if (marlaEl.value) syncFromMarla();
+    else if (sqftEl.value) syncFromSqft();
+    applyFeasibilityCapsFromPlot();
+  });
+  const bhkEl = document.getElementById('cost-bhk');
+  if (bhkEl) bhkEl.addEventListener('change', applyFeasibilityCapsFromPlot);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// MODULE 1 — RECOMMENDATION
+// ═══════════════════════════════════════════════════════════════════
+
+let lastRecResponse = null;
+
+const PALETTE = [
+  '#8C52FF','#00D2FF','#10B981','#F59E0B','#EF4444',
+  '#6366F1','#EC4899','#14B8A6','#F97316','#84CC16','#06B6D4',
+];
+
+async function getRec() {
+  const text    = document.getElementById('rec-text').value.trim();
+  const area    = document.getElementById('rec-area').value.trim();
+  const city    = document.getElementById('rec-city').value.trim();
+  const quality = document.getElementById('rec-quality').value;
+  const budget  = document.getElementById('rec-budget').value;
+
+  if (!text) { alert('Please describe your project.'); return; }
+
+  const btn    = document.getElementById('rec-btn');
+  const label  = document.getElementById('rec-btn-label');
+  const spin   = document.getElementById('rec-spinner');
+  const status = document.getElementById('rec-status');
+  const results = document.getElementById('rec-results');
+
+  btn.disabled = true;
+  spin.style.display = 'block';
+  label.textContent = 'Analysing project…';
+  status.textContent = '';
+  status.classList.remove('show');
+  results.innerHTML = '';
+
+  const payload = { text, quality, use_llm: true };
+  if (area)   payload.area   = area;
+  if (city)   payload.city   = city;
+  if (budget) payload.budget = String(budget);
+  payload.finishing_tier = mapUiQualityToFinishingTierKey(quality);
+
+  try {
+    const res = await fetch('/recommend', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    lastRecResponse = data;
+    renderRecResults(data);
+  } catch (e) {
+    status.textContent = '⚠ ' + e.message + ' — make sure the backend is running.';
+    status.classList.add('show');
+  } finally {
+    btn.disabled = false;
+    spin.style.display = 'none';
+    label.textContent = 'Get AI Recommendations';
+  }
+}
+
+function renderRecResults(data) {
+  const container = document.getElementById('rec-results');
+  const cats   = data.categories || data.recommendations || {};
+  const expls  = data.explanations || {};
+  const qty    = data.quantities;
+  const total  = data.total_products || data.total_items || 0;
+  const ptype  = data.project_type || '—';
+  const area   = data.area || (qty ? qty.area_sqft + ' sqft' : '—');
+  const f      = data.filters_applied || {};
+
+  // ── Summary Panel ──
+  let qtyHtml = '';
+  if (qty && qty.structural) {
+    const rows = [
+      ...Object.entries(qty.structural || {}),
+      ...Object.entries(qty.finishing  || {}),
+    ].map(([k,v]) =>
+      `<tr><td>${escapeHtml(k)}</td><td>${fmtN(v.quantity)}</td><td>${escapeHtml(v.unit)}</td></tr>`
+    ).join('');
+    qtyHtml = `
+      <details class="boq-details" style="margin-top:.85rem">
+        <summary>📐 Estimated BOQ for ${escapeHtml(String(qty.area_sqft))} sqft (rule-based)</summary>
+        <div class="product-table-wrap" style="margin-top:.6rem">
+          <table class="product-table">
+            <thead><tr><th>Material</th><th>Qty</th><th>Unit</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+      </details>`;
+  }
+
+  const filterChips = [
+    f.quality && `<span style="background:var(--primary-soft);color:var(--primary-dark);padding:.2rem .6rem;border-radius:999px;font-size:.78rem;font-weight:600">${escapeHtml(f.quality)}</span>`,
+    f.finishing_tier && `<span style="background:#EDE9FE;color:#5B21B6;padding:.2rem .6rem;border-radius:999px;font-size:.78rem;font-weight:600">Tier: ${escapeHtml(f.finishing_tier)}</span>`,
+    f.city && `<span style="background:#E0F2FE;color:#0284C7;padding:.2rem .6rem;border-radius:999px;font-size:.78rem;font-weight:600">${escapeHtml(f.city)}</span>`,
+    area !== '—' && `<span style="background:#ECFDF5;color:#059669;padding:.2rem .6rem;border-radius:999px;font-size:.78rem;font-weight:600">${escapeHtml(area)}</span>`,
+  ].filter(Boolean).join(' ');
+
+  let summaryHtml = `
+    <div class="summary-panel">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.75rem">
+        <div>
+          <div style="font-weight:700;font-size:1.1rem;margin-bottom:.35rem">
+            Project Type: <span style="color:var(--primary)">${escapeHtml(ptype.replace(/_/g,' '))}</span>
+          </div>
+          <div style="display:flex;gap:.4rem;flex-wrap:wrap">${filterChips}</div>
+          ${data.finishing_tier_summary ? `<p style="margin:.55rem 0 0;font-size:.82rem;color:var(--muted);max-width:52rem">${escapeHtml(data.finishing_tier_summary)}</p>` : ''}
+        </div>
+        <button class="btn-outline" onclick="saveCurrentRec()" style="flex-shrink:0">
+          <i data-lucide="bookmark"></i> Save
+        </button>
+      </div>
+      <div class="summary-grid">
+        <div class="summary-stat"><div class="summary-stat-value">${total}</div><div class="summary-stat-label">Total Products</div></div>
+        <div class="summary-stat"><div class="summary-stat-value">${Object.keys(cats).length}</div><div class="summary-stat-label">Categories</div></div>
+        ${data.city_advisory ? `<div class="summary-stat" style="grid-column:1/-1;text-align:left"><span style="font-weight:600;font-size:.82rem;color:var(--muted)">📍 City Advisory:</span> <span style="font-size:.82rem">${escapeHtml(data.city_advisory)}</span></div>` : ''}
+      </div>
+      ${qtyHtml}
+    </div>`;
+
+  // ── Category Cards ──
+  let catHtml = '<div class="categories-grid">';
+  Object.entries(cats).forEach(([cat, items], idx) => {
+    const expl = expls[cat] ? `<div class="cat-explanation">${escapeHtml(expls[cat])}</div>` : '';
+    const color = PALETTE[idx % PALETTE.length];
+    const rows = items.map(p => {
+      const avail = (p.availability || '').toLowerCase().includes('available');
+      const dotClass = avail ? 'avail-ok' : 'avail-no';
+      const qty = p.estimated_quantity != null ? `${fmtN(p.estimated_quantity)} ${p.unit || ''}` : '—';
+      const cost = p.estimated_total_cost != null ? `<strong>Rs ${fmtN(p.estimated_total_cost)}</strong>` : '—';
+      const descDisplay = p.description && p.description.trim() ? `<span style="color:var(--muted);font-size:.78rem;display:block;margin-top:.3rem">${escapeHtml(p.description)}</span>` : '';
+      const phaseDisplay = p.phase ? `<span class="${phaseBadgeClass(p.phase)}" title="${escapeHtml(p.phase)}">${escapeHtml(p.phase)}</span>` : '';
+      return `<tr>
+        <td>
+          <strong>${escapeHtml(p.item_name)}</strong>
+          ${descDisplay}
+          <br><span style="color:var(--muted);font-size:.78rem">${escapeHtml(p.brand||'')}</span>
+        </td>
+        <td>${phaseDisplay}</td>
+        <td>${escapeHtml(p.quality_grade||'')}</td>
+        <td>Rs ${fmtN(p.final_price_pkr)} <span style="color:var(--muted);font-size:.75rem">/${escapeHtml(p.unit||'')}</span></td>
+        <td>${qty}</td>
+        <td>${cost}</td>
+        <td><span class="avail-dot ${dotClass}"></span>${escapeHtml(p.availability||'—')}</td>
+        <td><span class="score-pill">${p.recommendation_score||0}%</span></td>
+      </tr>`;
+    }).join('');
+
+    catHtml += `
+      <div class="cat-card" id="cat-${idx}">
+        <div class="cat-header" onclick="toggleCat(${idx})">
+          <div class="cat-title">
+            <span style="width:10px;height:10px;border-radius:50%;background:${color};display:inline-block"></span>
+            ${escapeHtml(cat)}
+            <span class="cat-badge">${items.length}</span>
+          </div>
+          <i data-lucide="chevron-down" class="cat-toggle"></i>
+        </div>
+        <div class="cat-body">
+          ${expl}
+          <div class="product-table-wrap">
+            <table class="product-table">
+              <thead>
+                <tr>
+                  <th>Product & Description</th><th>Phase</th><th>Grade</th><th>Unit Price</th>
+                  <th>Est. Qty</th><th>Est. Total</th><th>Availability</th><th>Score</th>
+                </tr>
+              </thead>
+              <tbody>${rows}</tbody>
+            </table>
+          </div>
+        </div>
+      </div>`;
+  });
+  catHtml += '</div>';
+
+  container.innerHTML = summaryHtml + catHtml;
+  lucide.createIcons();
+
+  // Auto-open the first card.
+  const firstCard = container.querySelector('.cat-card');
+  if (firstCard) firstCard.classList.add('open');
+
+  // Scroll to results.
+  setTimeout(() => container.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
+}
+
+function toggleCat(idx) {
+  const card = document.getElementById(`cat-${idx}`);
+  if (card) card.classList.toggle('open');
+}
+
+async function saveCurrentRec() {
+  if (!lastRecResponse) return;
+  const name = prompt('Project name?', 'My Project') || 'My Project';
+  try {
+    await fetch('/save-recommendation', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        project_name: name,
+        input: {
+          text: document.getElementById('rec-text').value,
+          area: document.getElementById('rec-area').value,
+          city: document.getElementById('rec-city').value,
+          quality: document.getElementById('rec-quality').value,
+        },
+        recommendations: lastRecResponse.categories || {},
+        total_estimated_cost: null,
+      }),
+    });
+    alert('Saved ✓');
+  } catch (e) { alert('Save failed: ' + e.message); }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// MODULE 2 — COST ESTIMATION
+// ═══════════════════════════════════════════════════════════════════
+
+let costChartInstance = null;
+let lastCostResponse  = null;
+
+function costBasisLine(row) {
+  const u = String(row.unit || '').toLowerCase();
+  if (u === 'lumpsum' || u === 'category') return 'Lumpsum / package';
+  const q = row.quantity;
+  if (q == null || q === '' || q === '—') return `PKR ${fmtN(row.unit_cost)} / ${escapeHtml(row.unit || 'unit')}`;
+  return `${escapeHtml(String(q))} ${escapeHtml(row.unit || '')} × PKR ${fmtN(row.unit_cost)}`;
+}
+
+const BOQ_TERM_HINT_LOCAL = {
+  PCC: 'Plain cement concrete — levelling / blinding mix before structural RCC.',
+  RCC: 'Reinforced cement concrete — structural slabs, beams, and columns.',
+  rebar: 'Steel reinforcing bars cast inside concrete to carry tension.',
+  sarya: 'Local term for reinforcement steel (rebar).',
+  bajri: 'Crushed stone aggregate used in concrete and under floors.',
+  cft: 'Cubic feet — common site unit for sand, crush, and concrete volume.',
+};
+
+function mergeBoqGlossary(data) {
+  const g = (data && data.boq_tooltip_glossary) || {};
+  return { ...BOQ_TERM_HINT_LOCAL, ...g };
+}
+
+function phaseBadgeClass(phase) {
+  const p = String(phase || 'General');
+  const k = ['Foundation', 'Structure', 'Masonry', 'Finishing', 'General'].includes(p) ? p : 'General';
+  return `phase-badge phase-badge--${k}`;
+}
+
+function buildBoqItemTooltip(name, description, glossary) {
+  const lower = String(name || '').toLowerCase();
+  const bits = [];
+  if (description) bits.push(String(description));
+  Object.keys(glossary || {}).forEach((term) => {
+    const tl = term.toLowerCase();
+    if (tl && lower.includes(tl)) bits.push(`${term}: ${glossary[term]}`);
+  });
+  return bits.join(' — ');
+}
+
+function buildBoqItemRowsHTML(lines, glossary) {
+  const nums = lines.map((x) => Number(x.total) || 0);
+  const maxT = Math.max(...nums, 1);
+  return lines
+    .map((it) => {
+      const rawDescTrim =
+        it.description !== undefined && it.description !== null ? String(it.description).trim() : '';
+      const hasCatalogDesc = rawDescTrim.length > 0;
+      const tip = buildBoqItemTooltip(it.name, hasCatalogDesc ? rawDescTrim : '', glossary);
+      const hot = lines.length > 2 && (Number(it.total) || 0) >= maxT * 0.72 ? ' boq-item-row--hot' : '';
+      const u = String(it.unit || '').toLowerCase();
+      const qtyDisp =
+        u === 'lumpsum' || u === 'lot' ? '1 lumpsum' : `${escapeHtml(String(it.quantity))} ${escapeHtml(String(it.unit || ''))}`.trim();
+      const up = u === 'lumpsum' || u === 'lot' ? '—' : `PKR ${fmtN(it.unit_cost)}`;
+      const phaseCoarse = it.phase || 'General';
+      const phaseCatRaw = String(it.phase_detail || '').trim();
+      const badgeTitleEsc = escapeHtml(phaseCatRaw || phaseCoarse);
+      const descHtml = hasCatalogDesc
+        ? `<span class="boq-desc boq-desc--catalog">${escapeHtml(rawDescTrim)}</span>`
+        : `<span class="boq-desc boq-desc--muted">No description available</span>`;
+      const calc = String(it.calculation || '');
+      const calcEsc = escapeHtml(calc);
+      const floor =
+        it.floor_factor != null && Math.abs(Number(it.floor_factor) - 1) > 1e-4
+          ? `×${Number(it.floor_factor).toFixed(3)}`
+          : '—';
+      return `<div class="boq-item-row${hot}" title="${calcEsc}">
+        <div>
+          <div class="boq-item-name" title="${escapeHtml(tip)}">${escapeHtml(it.name)}</div>
+          ${descHtml}
+          ${calc ? `<div class="boq-calc-hint">↳ ${calcEsc}</div>` : ''}
+        </div>
+        <div class="boq-item-phase">
+          <span class="${phaseBadgeClass(phaseCoarse)}" title="${badgeTitleEsc}">${escapeHtml(phaseCoarse)}</span>
+        </div>
+        <div class="boq-item-qty">${qtyDisp}</div>
+        <div>${up}</div>
+        <div class="boq-item-sub">Rs ${fmtN(it.total)}</div>
+        <div class="boq-item-floor">${floor}</div>
+      </div>`;
+    })
+    .join('');
+}
+
+function bindBoqCategoryCard(card, baseLines, glossary) {
+  const sortEl = card.querySelector('.boq-sort');
+  const phEl = card.querySelector('.boq-phase-filter');
+  const qEl = card.querySelector('.boq-q');
+  const head = card.querySelector('.boq-item-head');
+  const body = card.querySelector('.boq-items-body');
+  if (!body) return;
+  const phases = [...new Set(baseLines.map((x) => String(x.phase || 'General')))].sort();
+  if (phEl && phEl.options.length <= 1) {
+    phases.forEach((p) => {
+      const o = document.createElement('option');
+      o.value = p;
+      o.textContent = p;
+      phEl.appendChild(o);
+    });
+  }
+  const render = () => {
+    let L = baseLines.slice();
+    const qv = (qEl && qEl.value && qEl.value.trim().toLowerCase()) || '';
+    if (qv) {
+      L = L.filter(
+        (it) =>
+          String(it.name || '')
+            .toLowerCase()
+            .includes(qv) ||
+          String(it.description || '')
+            .toLowerCase()
+            .includes(qv) ||
+          String(it.material_type || '')
+            .toLowerCase()
+            .includes(qv),
+      );
+    }
+    const pf = phEl && phEl.value;
+    if (pf && pf !== 'all') L = L.filter((it) => String(it.phase || 'General') === pf);
+    const s = (sortEl && sortEl.value) || 'cost_desc';
+    if (s === 'cost_desc') L.sort((a, b) => (Number(b.total) || 0) - (Number(a.total) || 0));
+    else if (s === 'cost_asc') L.sort((a, b) => (Number(a.total) || 0) - (Number(b.total) || 0));
+    else if (s === 'phase') L.sort((a, b) => String(a.phase || '').localeCompare(String(b.phase || '')));
+    else if (s === 'name') L.sort((a, b) => String(a.name || '').localeCompare(String(b.name || '')));
+    body.innerHTML = buildBoqItemRowsHTML(L, glossary);
+    if (head) head.style.display = L.length ? '' : 'none';
+  };
+  sortEl && sortEl.addEventListener('change', render);
+  phEl && phEl.addEventListener('change', render);
+  qEl &&
+    qEl.addEventListener('input', () => {
+      window.clearTimeout(qEl._t);
+      qEl._t = window.setTimeout(render, 160);
+    });
+  render();
+}
+
+async function getCost() {
+  const marlaRaw = document.getElementById('cost-marla').value;
+  const sqftRaw  = document.getElementById('cost-sqft').value;
+  const quality = document.getElementById('cost-quality').value;
+  const city    = document.getElementById('cost-city').value.trim() || 'Lahore';
+  const projectType = document.getElementById('cost-project-type').value;
+  const floors  = parseInt(document.getElementById('cost-floors').value) || 1;
+  const bhk       = parseInt(document.getElementById('cost-bhk').value, 10) || 3;
+
+  if ((!marlaRaw || parseFloat(marlaRaw) <= 0) && (!sqftRaw || parseInt(sqftRaw) <= 0)) {
+    alert('Please enter area in Marla or Sqft.');
+    return;
+  }
+
+  // Same source as live marla⇄sqft sync: /estimator-config (Supabase city_area_standards) + client fallback.
+  const perMarla = marlaSqftForCity(city);
+
+  // If marla is set, it wins over a stale sqft box (keeps UI + API aligned with server standards).
+  let sqftToSend = 0;
+  const mVal = parseFloat(marlaRaw);
+  const hasMarla = Number.isFinite(mVal) && mVal > 0;
+  const sVal = parseInt(sqftRaw, 10);
+  const hasSqft = Number.isFinite(sVal) && sVal > 0;
+  if (hasMarla) {
+    sqftToSend = Math.round(mVal * perMarla);
+    document.getElementById('cost-sqft').value = String(sqftToSend);
+  } else if (hasSqft) {
+    sqftToSend = sVal;
+  }
+
+  // Minimum area guard (frontend): 2 marla equivalent (aligned with API engine).
+  const minSqft = Math.round(2 * perMarla);
+  if (sqftToSend > 0 && sqftToSend < minSqft) {
+    alert(`Minimum area is 2 marla (~${minSqft} sqft in ${city}).`);
+    return;
+  }
+
+  const btn   = document.getElementById('cost-btn');
+  const label = document.getElementById('cost-btn-label');
+  const spin  = document.getElementById('cost-spinner');
+  const status= document.getElementById('cost-status');
+
+  btn.disabled = true; spin.style.display = 'block';
+  label.textContent = 'Calculating…'; status.classList.remove('show');
+
+  const payload = {
+    quality, city, floors,
+    project_type: projectType,
+    bhk,
+    use_llm: true,
+  };
+  payload.sqft = sqftToSend;
+
+  try {
+    const res = await fetch('/estimate-cost', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    lastCostResponse = data;
+    renderCost(data, quality, city);
+  } catch (e) {
+    status.textContent = '⚠ ' + e.message;
+    status.classList.add('show');
+  } finally {
+    btn.disabled = false; spin.style.display = 'none';
+    label.textContent = 'Calculate Cost Estimate';
+  }
+}
+
+function renderCost(data, quality, city) {
+  const out = document.getElementById('cost-output');
+  out.classList.add('show');
+
+  // Banner.
+  const bkd = data.breakdown || {};
+  const summary = bkd.summary || {};
+  const grand = summary.grand_total || data.total_cost || 0;
+  const sqft  = summary.total_sqft || data.project?.total_sqft || data.project?.sqft || data.sqft || 1;
+  document.getElementById('cost-total').textContent = 'Rs ' + fmtN(grand);
+  const cps = data.cost_per_sqft || Math.round(grand / Math.max(1, sqft));
+  document.getElementById('cost-persqft').textContent = `Rs ${fmtN(cps)} / sqft`;
+  const projMeta = data.project || {};
+  const displayTier =
+    (projMeta.quality != null && String(projMeta.quality).trim())
+      ? String(projMeta.quality).trim()
+      : projMeta.quality_grade != null
+        ? String(projMeta.quality_grade).replace(/\b\w/g, (c) => c.toUpperCase())
+        : quality;
+  document.getElementById('cost-grade-label').textContent = displayTier;
+  document.getElementById('cost-city-label').textContent  = city;
+
+  const feas = data.feasibility;
+  const ff = data.floor_factors;
+  const metaId = 'cost-meta-feas-floor';
+  document.getElementById(metaId)?.remove?.();
+  if (feas || ff) {
+    const meta = document.createElement('div');
+    meta.id = metaId;
+    meta.className = 'cost-meta-strip cost-meta-strip--feas';
+    const bits = [];
+    if (feas) {
+      bits.push(`Plot ~${feas.plot_sqft} sqft — max typical: ${feas.max_bedrooms} bed / ${feas.max_washrooms} bath${feas.clamped ? ' (inputs were clamped to this max)' : ''}.`);
+    }
+    if (ff && ff.structural_blend_mult != null) {
+      bits.push(`Floor model: ground ×${(ff.per_floor_multipliers && ff.per_floor_multipliers[0]) || ff.foundation_mult} foundation; structural blend ×${Number(ff.structural_blend_mult).toFixed(3)} (${ff.floors || '?'} floors).`);
+    }
+    meta.textContent = bits.join(' ');
+    const ban = document.getElementById('cost-banner');
+    if (ban && ban.nextSibling) out.insertBefore(meta, ban.nextSibling);
+    else out.appendChild(meta);
+  }
+
+  const pnId = 'cost-pricing-notes';
+  document.getElementById(pnId)?.remove?.();
+  const pricingNotes = data.pricing_notes;
+  if (pricingNotes && pricingNotes.length) {
+    const pn = document.createElement('div');
+    pn.id = pnId;
+    pn.className = 'cost-meta-strip cost-meta-strip--notes';
+    pn.innerHTML =
+      '<div style="font-weight:600;margin-bottom:.25rem;font-size:.82rem">Finishing &amp; wet-area model</div>' +
+      '<ul style="margin:.15rem 0 0 1.05rem;padding:0;font-size:.78rem;color:var(--muted)">' +
+      pricingNotes.map((t) => `<li>${escapeHtml(t)}</li>`).join('') +
+      '</ul>';
+    const anchor = document.getElementById(metaId) || document.getElementById('cost-banner');
+    if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(pn, anchor.nextSibling);
+    else out.appendChild(pn);
+  }
+
+  const tbody = document.getElementById('cost-tbody');
+  tbody.innerHTML = '';
+  const items = data.itemized_breakdown || {};
+
+  // Category breakdown for charts (major buckets only)
+  const cat = data.category_breakdown || {};
+  const scopeBuckets = (data.cost_scope && data.cost_scope.allowed_ui_buckets) || null;
+  let catEntries = Object.entries(cat)
+    .filter(([_, v]) => typeof v === 'number' && v > 0)
+    .sort((a, b) => b[1] - a[1]);
+  if (scopeBuckets && scopeBuckets.length) {
+    const allow = new Set(scopeBuckets.map((x) => String(x)));
+    catEntries = catEntries.filter(([k]) => allow.has(String(k)));
+  }
+
+  const chartLabels = catEntries.map(([k]) => k);
+  const chartVals   = catEntries.map(([_, v]) => v);
+  const chartColors = chartLabels.map((_, i) => PALETTE[i % PALETTE.length]);
+
+  // Itemized table now shows only top-level totals (category-first).
+  catEntries.forEach(([k, v], i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><strong>${escapeHtml(k)}</strong></td>
+      <td>Rs ${fmtN(v)}</td>`;
+    tbody.appendChild(tr);
+  });
+
+  // Expandable category drill-down (below table)
+  const existing = document.getElementById('cost-category-cards');
+  if (existing) existing.remove();
+  const wrap = document.createElement('div');
+  wrap.id = 'cost-category-cards';
+  wrap.className = 'categories-grid';
+  wrap.style.marginTop = '1rem';
+
+  // Map items to categories if backend provides row.category, else fallback keyword bucket.
+  const bucketFallback = (name) => {
+    const n = String(name || '').toLowerCase();
+    if (/(cement|bricks|brick|rebar|steel|sarya|crush|bajri|sand|foundation|excavation|pcc|rcc)/.test(n)) return 'Grey Structure';
+    if (/(plumb|pprc|upvc|sanitary|trap|tank)/.test(n)) return 'Plumbing';
+    if (/(wire|cable|switch|db|panel|electric)/.test(n)) return 'Electrical';
+    if (/(tile|paint|putty|primer|wood|door|window|aluminum|glass|kitchen|wardrobe)/.test(n)) return 'Finishing';
+    return 'Misc';
+  };
+
+  const itemsByCat = {};
+  const allowItem = (catName) => {
+    if (!scopeBuckets || !scopeBuckets.length) return true;
+    return new Set(scopeBuckets.map((x) => String(x))).has(String(catName));
+  };
+  Object.entries(items).forEach(([name, row]) => {
+    if (!row || typeof row.total !== 'number') return;
+    let c = row.category;
+    if (!c) c = bucketFallback(name);
+    if (scopeBuckets && scopeBuckets.length && !allowItem(c)) return;
+    (itemsByCat[c] ||= []).push({ name, ...row });
+  });
+
+  const glossary = mergeBoqGlossary(data);
+  chartLabels.forEach((cName, idx) => {
+    const rawList = itemsByCat[cName] || [];
+    const list = rawList.slice().sort((a, b) => (Number(b.total) || 0) - (Number(a.total) || 0)).slice(0, 40);
+    const total = cat[cName] || list.reduce((s, x) => s + (Number(x.total) || 0), 0);
+
+    const card = document.createElement('div');
+    card.className = 'cat-card';
+    const greyBoqHint =
+      cName === 'Grey Structure'
+        ? `<p class="cat-explanation" style="margin-top:0">
+            Cement, sand, and crush can appear more than once when the BOQ separates stages (for example PCC vs column concrete).
+            Structural steel lines from the catalogue are merged into one sarya/rebar total that matches the built-up thumb rule.
+          </p>`
+        : '';
+
+    card.innerHTML = `
+      <div class="cat-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="cat-title">
+          <span style="width:10px;height:10px;border-radius:50%;background:${PALETTE[idx % PALETTE.length]};display:inline-block"></span>
+          ${escapeHtml(cName)}
+          <span class="cat-badge">Rs ${fmtN(total)}</span>
+        </div>
+        <i data-lucide="chevron-down" class="cat-toggle"></i>
+      </div>
+      <div class="cat-body">
+        ${greyBoqHint}
+        <div class="boq-toolbar">
+          <div>
+            <label>Sort</label>
+            <select class="boq-sort">
+              <option value="cost_desc" selected>Cost (high → low)</option>
+              <option value="cost_asc">Cost (low → high)</option>
+              <option value="phase">Phase (A–Z)</option>
+              <option value="name">Name (A–Z)</option>
+            </select>
+          </div>
+          <div>
+            <label>Phase</label>
+            <select class="boq-phase-filter">
+              <option value="all" selected>All</option>
+            </select>
+          </div>
+          <div style="flex:1;min-width:140px">
+            <label>Search</label>
+            <input type="search" class="boq-q" placeholder="Item, description…" />
+          </div>
+        </div>
+        <div class="boq-items-wrap">
+          <div class="boq-items-inner">
+            <div class="boq-item-head">
+              <div>Item &amp; details</div>
+              <div>Phase</div>
+              <div>Quantity</div>
+              <div>Unit PKR</div>
+              <div>Subtotal</div>
+              <div>Floor</div>
+            </div>
+            <div class="boq-items-body"></div>
+          </div>
+        </div>
+      </div>`;
+    wrap.appendChild(card);
+    bindBoqCategoryCard(card, list, glossary);
+  });
+
+  out.querySelector('.cost-grid')?.insertAdjacentElement('afterend', wrap);
+
+  // Total row.
+  const tfoot = document.createElement('tr');
+  tfoot.style.fontWeight = '700';
+  tfoot.innerHTML = `<td style="text-align:right">Grand Total</td><td>Rs ${fmtN(grand)}</td>`;
+  tbody.appendChild(tfoot);
+
+  // Pie chart (one segment = 100% when a single scoped category remains).
+  if (costChartInstance) { costChartInstance.destroy(); costChartInstance = null; }
+  const ctx = document.getElementById('cost-chart').getContext('2d');
+  const chartGrand = chartVals.reduce((a, b) => a + b, 0) || grand;
+  const safeLabels = chartLabels.length ? chartLabels : ['Total'];
+  const safeVals = chartVals.length ? chartVals : [grand];
+  const safeColors = safeLabels.map((_, i) => PALETTE[i % PALETTE.length]);
+  const donutBorder = document.documentElement.getAttribute('data-theme') === 'dark' ? '#252a38' : '#ffffff';
+  costChartInstance = new Chart(ctx, {
+    type: 'doughnut',
+    data: { labels: safeLabels, datasets: [{ data: safeVals, backgroundColor: safeColors, borderWidth: 2, borderColor: donutBorder }] },
+    options: {
+      cutout: '62%',
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 11 }, boxWidth: 12, padding: 14 } },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const pct = chartGrand > 0 ? ((ctx.raw / chartGrand) * 100).toFixed(1) : '0.0';
+              return ` Rs ${fmtN(ctx.raw)} (${pct}%)`;
+            },
+          },
+        },
+      },
+    },
+  });
+
+  // LLM tips.
+  const tips = data.llm_cost_tips || [];
+  const tipsCard = document.getElementById('cost-tips-card');
+  const tipsList = document.getElementById('cost-tips-list');
+  tipsList.innerHTML = '';
+  if (tips.length > 0) {
+    tipsCard.style.display = 'block';
+    tips.forEach(t => {
+      const li = document.createElement('li');
+      li.textContent = t;
+      tipsList.appendChild(li);
+    });
+  } else {
+    tipsCard.style.display = 'none';
+  }
+
+  lucide.createIcons();
+  out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+async function compareCostTiers() {
+  const sqft = parseInt(document.getElementById('cost-sqft').value) || 1361;
+  const city = document.getElementById('cost-city').value.trim() || 'Lahore';
+  try {
+    const res = await fetch(`/estimate-cost/compare?sqft=${sqft}&city=${encodeURIComponent(city)}`);
+    const data = await res.json();
+    const tiers = data.comparison || {};
+    let html = '<div style="overflow-x:auto"><table class="product-table"><thead><tr><th>Grade</th><th>Total (Rs)</th><th>Per sqft (Rs)</th></tr></thead><tbody>';
+    Object.entries(tiers).forEach(([g, v]) => {
+      html += `<tr><td>${g}</td><td>${fmtN(v.grand_total)}</td><td>${fmtN(v.per_sqft)}</td></tr>`;
+    });
+    html += '</tbody></table></div>';
+    const win = window.open('', '_blank', 'width=480,height=380');
+    win.document.write(`<html><head><title>Grade Comparison</title></head><body style="font-family:sans-serif;padding:2rem">${html}</body></html>`);
+  } catch (e) { alert('Compare failed: ' + e.message); }
+}
+
+function saveCostEstimate() {
+  if (!lastCostResponse) return;
+  alert('Cost estimate saved to Saved Estimates (feature coming soon).');
+}
+
+function useInRecommendation() {
+  const marla = document.getElementById('cost-marla').value.trim();
+  const sqft  = document.getElementById('cost-sqft').value.trim();
+  const area  = marla ? `${marla} marla` : (sqft ? `${sqft} sqft` : '');
+  const quality = document.getElementById('cost-quality').value;
+  const city    = document.getElementById('cost-city').value;
+  const bhk     = document.getElementById('cost-bhk')?.value || '3';
+  document.getElementById('rec-area').value    = area;
+  document.getElementById('rec-quality').value = quality;
+  document.getElementById('rec-city').value    = city;
+  document.getElementById('rec-text').value    =
+    `Materials for ${area || (sqft ? sqft + ' sqft' : 'house')} ${bhk} BHK house in ${city}`;
+  switchTab('rec');
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// CHATBOT
+// ═══════════════════════════════════════════════════════════════════
+
+const chatbotToggle   = document.getElementById('chatbotToggle');
+const chatbotClose    = document.getElementById('chatbotClose');
+const chatbotWindow   = document.getElementById('chatbotWindow');
+const chatbotMessages = document.getElementById('chatbotMessages');
+const chatbotInput    = document.getElementById('chatbotInput');
+const chatbotSend     = document.getElementById('chatbotSend');
+const chatbotSuggestions = document.getElementById('chatbotSuggestions');
+
+chatbotToggle.addEventListener('click', () => {
+  chatbotWindow.classList.toggle('active');
+  if (chatbotWindow.classList.contains('active')) chatbotInput.focus();
+});
+chatbotClose.addEventListener('click', () => chatbotWindow.classList.remove('active'));
+chatbotSend.addEventListener('click', sendMessage);
+chatbotInput.addEventListener('keypress', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+});
+
+// Suggestion chips (match screenshot)
+if (chatbotSuggestions) {
+  chatbotSuggestions.addEventListener('click', (ev) => {
+    const btn = ev.target.closest('button[data-chat]');
+    if (!btn) return;
+    const text = String(btn.dataset.chat || '').trim();
+    if (!text) return;
+    chatbotWindow.classList.add('active');
+    chatbotInput.value = text;
+    sendMessage();
+  });
+}
+
+/**
+ * Convert simple markdown from the backend into safe HTML:
+ *  **bold**  → <strong>
+ *  1. item   → <ol><li>
+ *  • item    → <ul class="msg-bullets"><li>
+ *  💡 Tip:   → .msg-tip block
+ *  \n        → line break where needed
+ */
+function renderBotText(raw) {
+  if (!raw) return '';
+  let s = raw.trim();
+
+  // Escape raw HTML first.
+  s = s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+  // Bold: **text**
+  s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+
+  // Markdown ## headings → styled section titles (router template uses these)
+  s = s.replace(/^##\s+(.+)$/gm, '<div class="msg-h2">$1</div>');
+
+  // Tips line (💡 Tip: ...)
+  s = s.replace(/💡\s*Tip:\s*(.+)/g, '<div class="msg-tip">💡 $1</div>');
+
+  // Numbered list: lines starting with "1." / "2." etc.
+  const lines = s.split('\n');
+  const out = [];
+  let inOl = false;
+  let inUl = false;
+
+  for (let line of lines) {
+    const trimmed = line.trim();
+
+    if (/^\d+\.\s/.test(trimmed)) {
+      if (!inOl) { if (inUl) { out.push('</ul>'); inUl = false; } out.push('<ol>'); inOl = true; }
+      out.push('<li>' + trimmed.replace(/^\d+\.\s*/, '') + '</li>');
+    } else if (/^[•\-]\s/.test(trimmed)) {
+      if (!inUl) { if (inOl) { out.push('</ol>'); inOl = false; } out.push('<ul class="msg-bullets">'); inUl = true; }
+      out.push('<li>' + trimmed.replace(/^[•\-]\s*/, '') + '</li>');
+    } else {
+      if (inOl) { out.push('</ol>'); inOl = false; }
+      if (inUl) { out.push('</ul>'); inUl = false; }
+      out.push(trimmed ? trimmed : '<br>');
+    }
+  }
+  if (inOl) out.push('</ol>');
+  if (inUl) out.push('</ul>');
+
+  return out.join('\n');
+}
+
+function formatIntentLabel(intent, source) {
+  const i = String(intent || '').toLowerCase();
+  const map = {
+    recommendation: 'Recommendations',
+    cost_estimation: 'Cost estimate',
+    cost_and_recommendation: 'Cost + picks',
+    platform_help: 'Platform help',
+    navigation: 'Navigation',
+    general_question: 'Q&A',
+    clarification_needed: 'Need a detail',
+    purchase_help: 'Shopping guide',
+    off_topic: 'Out of scope',
+    error: 'Error',
+    utility: 'Quick tool',
+  };
+  if (map[i]) return map[i];
+  if (source === 'kb_fallback') return 'Knowledge base';
+  return intent ? intent.replace(/_/g, ' ') : 'Reply';
+}
+
+function intentPillClass(intent) {
+  const i = String(intent || '').toLowerCase();
+  if (i === 'recommendation' || i === 'purchase_help') return 'chat-intent-pill--rec';
+  if (i === 'cost_estimation') return 'chat-intent-pill--cost';
+  if (i === 'cost_and_recommendation') return 'chat-intent-pill--mixed';
+  if (i === 'platform_help' || i === 'navigation') return 'chat-intent-pill--help';
+  if (i === 'clarification_needed') return 'chat-intent-pill--clarify';
+  return 'chat-intent-pill--neutral';
+}
+
+function buildIntentRow(intent, confidence, source) {
+  if (!intent) return '';
+  const label = escapeHtml(formatIntentLabel(intent, source));
+  const cls = intentPillClass(intent);
+  let row = `<div class="chat-intent-row"><span class="chat-intent-pill ${cls}">${label}</span>`;
+  if (typeof confidence === 'number' && confidence > 0 && String(intent).toLowerCase() !== 'utility') {
+    row += `<span class="chat-intent-conf">${Math.round(Math.min(1, confidence) * 100)}% confidence</span>`;
+  }
+  row += '</div>';
+  return row;
+}
+
+function appendBotBlock(html, meta) {
+  const div = document.createElement('div');
+  div.className = 'message bot';
+  const head = meta && meta.intent ? buildIntentRow(meta.intent, meta.confidence, meta.source) : '';
+  div.innerHTML = `<div class="chatbot-avatar" aria-hidden="true">BH</div>` + head + `<div class="message-bubble">${html}</div>`;
+  chatbotMessages.appendChild(div);
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  return div;
+}
+
+function showTyping() {
+  const div = document.createElement('div');
+  div.className = 'message bot';
+  div.id = 'typing-indicator';
+  div.innerHTML = '<div class="chatbot-avatar" aria-hidden="true">BH</div><div class="message-bubble"><div class="typing-dots"><span></span><span></span><span></span></div></div>';
+  chatbotMessages.appendChild(div);
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+function hideTyping() {
+  const el = document.getElementById('typing-indicator');
+  if (el) el.remove();
+}
+
+async function sendMessage() {
+  const msg = chatbotInput.value.trim();
+  if (!msg) return;
+
+  appendUserMsg(msg);
+  chatbotInput.value = '';
+  chatbotSend.disabled = true;
+  showTyping();
+
+  try {
+    const res = await fetch('/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      // Keep chatbot fast + deterministic: module-sourced answers (no LLM rewrite).
+      // Persist a lightweight session id for context-followups/preferences.
+      body: JSON.stringify({ query: msg, use_llm: false, conversation_id: (window.__bhChatId || (window.__bhChatId = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now())))) }),
+    });
+    const data = await res.json();
+    hideTyping();
+
+    if (data.status === 'success') {
+      // Main answer: structured markdown + visible intent routing tag
+      appendBotBlock(renderBotText(data.answer || ''), {
+        intent: data.intent,
+        confidence: data.confidence,
+        source: data.source,
+      });
+
+      // Product mini-cards (purchase intent)
+      if (Array.isArray(data.products) && data.products.length > 0) {
+        const cards = data.products.slice(0,4).map(p => `
+          <div class="product-mini-card">
+            <strong>${escapeHtml(p.item_name)}</strong>
+            <span style="color:var(--muted);font-size:.77rem">${escapeHtml(p.brand||'')} · ${escapeHtml(p.quality_grade||'')}</span><br>
+            <span style="font-weight:600">Rs ${fmtN(p.final_price_pkr)}</span>
+            <span style="color:var(--muted)">/${escapeHtml(p.unit||'unit')}</span>
+            <span style="float:right;background:var(--primary-soft);color:var(--primary-dark);
+                         padding:.1rem .4rem;border-radius:999px;font-size:.72rem;font-weight:700">
+              ${p.recommendation_score||0}%
+            </span>
+          </div>`).join('');
+        appendBotHtml(cards, '#F8F5FF');
+      }
+
+      // Follow-up chips removed for cleaner UX (navigation button is enough).
+
+      // Optional navigation buttons (recommendation / estimation)
+      const nav = data.navigation_actions;
+      if (Array.isArray(nav) && nav.length > 0) {
+        const div = document.createElement('div');
+        div.className = 'message bot';
+        const btns = nav.slice(0,2).map(a => {
+          const label = escapeHtml(a.label || 'Open');
+          const target = (a.target_module || '').toLowerCase();
+          const action = target === 'recommendation' ? 'rec' : (target === 'estimation' ? 'cost' : '');
+          const btnCls = action === 'rec' ? 'chat-cta-btn chat-cta-btn--rec'
+            : (action === 'cost' ? 'chat-cta-btn chat-cta-btn--cost' : 'chat-cta-btn chat-cta-btn--ghost');
+          return `<button type="button" class="${btnCls}" data-action="${escapeHtml(action)}">${label}</button>`;
+        }).join('');
+        div.innerHTML = `
+          <div class="message-bubble" style="background:#FAF5FF;border:1px solid #DDD6FF">
+            <div class="chat-cta-wrap">
+              <div class="chat-cta-label">Next step</div>
+              ${btns}
+            </div>
+          </div>`;
+        chatbotMessages.appendChild(div);
+        div.querySelectorAll('button[data-action]').forEach(b => {
+          b.addEventListener('click', () => {
+            const a = b.dataset.action;
+            if (a === 'rec') switchTab('rec');
+            if (a === 'cost') switchTab('cost');
+          });
+        });
+      }
+    } else {
+      appendBotHtml('<span style="color:#EF4444">⚠ Something went wrong. Please try again.</span>');
+    }
+  } catch {
+    hideTyping();
+    appendBotHtml('<span style="color:#EF4444">⚠ Connection error — is the backend running?</span>');
+  }
+
+  chatbotSend.disabled = false;
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function appendUserMsg(text) {
+  const div = document.createElement('div');
+  div.className = 'message user';
+  div.innerHTML = `<div class="message-bubble">${escapeHtml(text)}</div>`;
+  chatbotMessages.appendChild(div);
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function appendBotHtml(html, bg = '') {
+  const div = document.createElement('div');
+  div.className = 'message bot';
+  const style = bg ? ` style="background:${bg};padding:.5rem"` : '';
+  div.innerHTML = `<div class="chatbot-avatar" aria-hidden="true">BH</div><div class="message-bubble"${style}>${html}</div>`;
+  chatbotMessages.appendChild(div);
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  return div;
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════════
+
+(function initTheme() {
+  const root = document.documentElement;
+  const stored = localStorage.getItem('bh-theme');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (stored === 'dark' || (!stored && prefersDark)) root.setAttribute('data-theme', 'dark');
+  const btn = document.getElementById('themeToggle');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      if (next === 'dark') root.setAttribute('data-theme', 'dark');
+      else root.removeAttribute('data-theme');
+      localStorage.setItem('bh-theme', next);
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+      window.dispatchEvent(new CustomEvent('bh-theme-change'));
+    });
+  }
+  window.addEventListener('bh-theme-change', () => {
+    if (lastCostResponse) {
+      const q = document.getElementById('cost-quality')?.value || 'Standard';
+      const c = document.getElementById('cost-city')?.value?.trim() || 'Lahore';
+      renderCost(lastCostResponse, q, c);
+    }
+  });
+})();
+
+lucide.createIcons();
+loadEstimationConfig();
+setupAreaSync();
+</script>
+</body>
+</html>
